@@ -1,0 +1,228 @@
+body{
+    background: radial-gradient(1000px, #2cc6b8,black);
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.modal_login{
+	margin-left: 25%;
+	margin-right: auto;
+	position: absolute;
+	width: 45%;
+	background-color: b7c7c7;
+	padding: 2%;
+	height: 50%;
+	box-shadow: 10px 7px grey;
+}
+.modal_login a{
+	color: red;
+}
+.modal_login input{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	width: 100%;
+}
+.modal_registro{
+	margin-left: 25%;
+	margin-right: auto;
+	position: absolute;
+	width: 45%;
+	background-color: b7c7c7;
+	padding: 2%;
+	height: 75	%;
+	box-shadow: 10px 7px grey;
+}
+.modal_registro a{
+	color: red;
+}
+.modal_registro input{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	width: 100%;
+}
+.ex{
+	width: 100%;
+	height: 20%;
+	background-color: 18a7a7;
+}
+.contenedor_index{
+    position: relative;
+	background-image: url(img/logo.jpg);
+}
+.cuadro_ini{
+    border: 1px solid black;
+    
+}
+.logo_index{
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+}
+.formulario_ubicacion{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+.select_1{
+    width: 100%;
+    margin-bottom: 2%;
+}
+.select_2{
+    width: 100%;
+    display: none;
+}
+.centro{
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+	padding-left: auto;
+	padding-right: auto;
+}
+.flecha{
+    margin-right: 0px;
+    margin-left: 72%;
+    margin-top: -38px;
+    display: none;
+}
+.cabecera {
+    background-color: cadetblue;
+    width: 100%;
+    position: absolute;
+    margin: 0px;
+}
+.logo{
+    float: left;
+    width: 19%;
+    text-align: center;
+    border-right: 1px solid black;
+}
+.nombre{
+    float: left;
+    width: 60%;
+    text-align: center;
+    
+}
+.menu{
+    float: left;
+    width: 19%; 
+    text-align: center;
+    border-left: 1px solid black;
+}
+.boton_superior{
+    width: 100%;
+    height: 100%;
+    margin-top: 20%;
+    position: relative;
+    padding: auto;
+    background-color: inherit;
+    color: black;
+    border-color: inherit;
+    border-image: none;
+}
+.desplegable{
+    overflow: hidden;
+    width: 100%;
+    height: 100;
+    position: relative;
+    padding: auto;
+}
+.contenido_desplegable{
+    display: none;
+    text-align: center;
+    position: fixed;
+    width: 20%;
+    background-color: #A9f9f9;
+    border: 2px dashed dodgerblue;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+.contenido_desplegable a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    text-align: left;
+}
+.desplegable:hover .contenido_desplegable{
+    display: inherit;
+    text-align: center;
+}
+.contenido{
+    padding-top: 8%;
+}
+.negocio{
+    border: 1px solid black;
+    width: 25%;
+    text-align: center;
+    margin-left: 6%;
+    float: left;
+    margin-bottom: 5%;
+    background-color: antiquewhite;
+}
+.negocio span{
+    font-size: 120px;
+}
+.negocio h3{
+    background-color: #bdd0e0;
+    margin-top: 0%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.negocio p{
+    background-color: #bdd0e0;
+    margin-bottom: 0%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.negocio h4{
+    background-color: #ea3b3b;
+    margin-top: 0%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-bottom: 0%;
+}
+.catalogo_neg{
+    width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    margin: auto;
+}
+.catalogo_neg th{
+    background-color: black;
+    color: whitesmoke;
+    margin: auto;
+
+}
+.catalogo_neg td{
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 12%;
+    margin: auto;
+}
+.producto_titulo{
+    background-color: blue;
+    color: aliceblue;
+}
+.producto_imagen img{
+    width: 40%;
+}
+.producto_desc{
+    
+}
+.descripcion{
+    float:right;
+}
+.seleccion_sexo{
+	position: relative;
+	width: 30%;
+}

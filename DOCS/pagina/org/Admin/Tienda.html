@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+            CecyEmprende
+        </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+    </head>
+    <body>
+      <div class="cabecera-ct">
+          <div class="logo-ct">
+              <img src="img/logo-812763_960_720.png" height="15%">
+          </div>
+          <div class="nombre-ct">
+              <h1>
+                  Mi negocio
+              </h1>
+          </div>
+          <div class="menu-ct">
+               <div class="desplegable-ct">
+                  <a href="negocio.html" class="boton_superior-ct">
+                      <h2>
+                          Regresar
+                      </h2>
+
+                  </a>
+
+                </div>
+          </div>
+      </div>
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Buscar..." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+        <div class="contenido">
+            <table class="catalogo_neg">
+
+                <tr>
+                    <th colspan="1">
+
+                    </th>
+                    <th colspan="2">
+                        Mi catalogo de productos
+                    </th>
+                    <th colspan="2">
+
+                    </th>
+                </tr>
+                <script type="text/javascript">
+                    for(o=0;o<4;o++){
+                        document.write('<tr>')
+                    for(i=0;i<5;i++){
+                        document.write('<td><div class="producto_titulo">Producto</div><div class="producto_imagen"><img src="img/img.jpg" width="50%"></div><div class="producto_desc"><p>nombre del producto</p><div class="Precio"><p align="left"> Precio:####</p></div></div></td>')
+
+                    }
+                    }
+                </script>
+
+
+            </table>
+        </div>
+    </body>
+</html>

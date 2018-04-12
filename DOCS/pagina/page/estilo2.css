@@ -1,0 +1,36 @@
+
+.tabla_pedido{
+    
+    color:black;
+    text-align: center;
+    margin: 10px;
+}
+.tdfecha{
+    font-size: 20px;
+    height: 30px;
+    padding:10;
+    background-color: cadetblue;
+    color: white;
+}
+.tddescripcion{
+    font-size: 15px;
+    text-align: right;
+    color: black;
+    background-color:powderblue;
+    margin: auto; 
+}
+.thprueba{
+    font-size: 40px;
+    color: white;
+    
+}
+.Fecha_inicial{
+    text-align: left;
+    margin-right:auto;
+    width: 40%;
+}
+.Fecha_final{
+    text-align: right;
+    margin-left: auto;
+    width: 40%;
+}
