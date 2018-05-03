@@ -1,5 +1,15 @@
 <?php
-$cantidad_productos=0;
+    session_start();
+    require("conexion.php");
+    if(!isset($_SESSION['usrcnf'])==0){
+        $sqlCarrito="select count(idDetalleVenta) from detalleVenta where idUsuario=".$_SESSION['usrcnf'];
+        $resCarrito=mysqli_query($mysqli,$sqlCarrito);
+        while($fila=mysqli_fetch_array($resCarrito)){
+            $cantidad_productos=$fila[0];
+        }
+    }else{
+        $cantidad_productos=0;
+    }
     echo '
     
                 <div class="cabecera">
@@ -25,11 +35,10 @@ $cantidad_productos=0;
 								<a href="login.php">Iniciar sesi&oacute;n</a>
 								';
 							}else{
-							
-							echo '<a href="tiendas.php">Mis tiendas</a>
-                            <a href="pedidos.php">Ultimos pedidos</a>
-                            <a href="Carrito.php">Carrito: '.$cantidad_productos.'</a>
-							<a href="logout.php">Cerrar sesi&oacute;n</a>';
+                                echo '<a href="tiendas.php">Mis tiendas</a>
+                                <a href="pedidos.php">Ultimos pedidos</a>
+                                <a href="Carrito.php">Carrito: '.$cantidad_productos.'</a>
+                                <a href="logout.php">Cerrar sesi&oacute;n</a>';
 							}
 							echo '
                            </div>

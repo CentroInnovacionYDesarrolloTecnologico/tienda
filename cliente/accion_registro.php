@@ -9,17 +9,22 @@
 	$celu=$_POST['celular'];
 	$fijo=$_POST['fijo'];
 	$correo=$_POST['c_e'];
+    $CP=$_POST['CP'];
 	require("conexion.php");
 	if ($mysqli->connect_errno) {
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sql="INSERT INTO `cecyemprende`.`usuarios` (Usuario,contra,nombre,apellido_p,apellido_m,fecha_nac,sexo,telefono_cel,telefono_fijo,correo_electronico) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."');";
-		$res=mysqli_query($mysqli,$sql);
-		if(!$res){
-			header("Location: registro.php?req=1");
-		}else{
-			header("Location: login.php");
-		}
+        try{
+            $sql="INSERT INTO `usuarios` (Usuario,PasswordU,Nombres,ApaternoU,AmaternoU,Fnac,Sexo,TcelularU,TcasaU,CorreoU,CP) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."','".$CP."');";
+            $res=mysqli_query($mysqli,$sql);
+            if(!$res){
+                //header("Location: registro.php?req=1");
+            }else{
+                //header("Location: login.php");
+            }
+        }catch (Exception $e) {
+            throw 'Excepción capturada: '.  $e->getMessage(). "\n";
+        }
 	}	
 ?>

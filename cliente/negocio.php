@@ -1,20 +1,3 @@
-<?php
-	session_start();
-	if(isset($_GET['idProd'])){
-		
-	}
-	$txt_att="";
-	$txt_mens="";
-	if(isset($_SESSION['usrcnf'])==0){
-		$txt_att='disabled="disabled"';
-		$txt_mens="<span style=".'"background-color: white; position: fixed; border: 2px red solid; border-radius: 5px; padding: 10px; margin-left: auto; margin-right: 0;"'.">Para realizar una compra necesita iniciar sesi&oacute;n</span>";
-	}
-	if(isset($_GET['cv_n']) || isset($_GET['neg'])){
-		$nom=$_GET['neg'];
-		$cv=$_GET['cv_n'];
-	}
-	require("conexion.php");
-?>
 <html>
     <head>
         <title>
@@ -28,7 +11,18 @@
         <?php
             include ("barras.php");
 		?>
-		
+        <?php
+            $txt_att="";
+            $txt_mens="";
+            if(isset($_SESSION['usrcnf'])==0){
+                $txt_att='disabled="disabled"';
+                $txt_mens="<span style=".'"background-color: white; position: fixed; border: 2px red solid; border-radius: 5px; padding: 10px; margin-left: auto; margin-right: 0;"'.">Para realizar una compra necesita iniciar sesi&oacute;n</span>";
+            }
+            if(isset($_GET['cv_n']) || isset($_GET['neg'])){
+                $nom=$_GET['neg'];
+                $cv=$_GET['cv_n'];
+            }
+        ?>
         <div class="contenido">
             <table class="catalogo_neg" cellspacing="8">
         <?php
@@ -44,7 +38,7 @@
                 </tr>
 				<tr>
                 <?php
-					$sql_prod="select producto, precio, codigo from productos where Negocio=".$cv.' order by precio;';
+					$sql_prod="select NombreP, preciounitario, idproducto from productos where idNegocio=".$cv.' && disponibilidadProducto=1 order by preciounitario;';
 					$res1=mysqli_query($mysqli,$sql_prod);
 					$o=0;
 					while($fila = mysqli_fetch_array($res1)){
@@ -67,7 +61,7 @@
 									</p>
 								</div>
 								<div class="BOTON_COMPRA">
-									<a href="accion_agregar_carrito.php?idProd='.$fila[2].'&&cv_n='.$cv.'&&neg='.$nom.'">
+									<a href="accion_agregar_carrito.php?idProd='.$fila[2].'&&cv_n='.$cv.'&neg='.$nom.'">
 										<button '.$txt_att.'>
 											<img src="img/carrito.jpg" width="20%">										
 										</button>

@@ -5,11 +5,12 @@
         </title>
         <link rel="stylesheet" type="text/css" href="estilo.css">
     </head>
-    
     <body>
         <?php
             include ("barras.php");
-    
+            if(!isset($_SESSION['usrcnf'])!=0){
+                header("Location: menu_principal.php");
+            }
         ?>
         <div class="contenido">
             <center> 

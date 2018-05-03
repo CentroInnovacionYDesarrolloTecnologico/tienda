@@ -1,7 +1,3 @@
-<?php
-	session_start();
-	require("conexion.php");
-?>
 <html>
     <head>
         <title>
@@ -16,11 +12,11 @@
         ?>
         <div class="contenido">
 			<?php
-				$consul_neg="select negocio, categoria, clave_negocio from negocios where estatus!=0;";
+				$consul_neg="select nnegocio, razon, idnegocio from negocios where statusN!=0;";
 				$res=mysqli_query($mysqli,$consul_neg);
 				while($fila = mysqli_fetch_array($res)){
 					echo '
-					<a href="negocio.php?cv_n='.$fila[2].'&neg='.$fila[0].'">
+					<a href="negocio.php?cv_n='.$fila[2].'&&neg='.$fila[0].'">
 						<div class="negocio">
 							<h3>
 								'.$fila[0].'

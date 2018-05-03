@@ -7,15 +7,16 @@
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sel="select contra from usuarios where usuario='".$us."';";
+		$sel="select PasswordU,idusuario from usuarios where usuario='".$us."';";
 		$resSel=mysqli_query($mysqli,$sel);
 		while($fila = mysqli_fetch_array($resSel)){
 			$contra=$fila[0];
+            $uss=$fila[1];
 		}
 		if(password_verify($_POST['cont'],$contra)){
-			$_SESSION['usrcnf']=3;
-			header("Location: menu_principal.php");
-			
+			$_SESSION['usrcnf']=$uss;
+            echo $uss;
+            header("Location: menu_principal.php");
 		}else{
 			header("Location: login.php?est=err");
 		}

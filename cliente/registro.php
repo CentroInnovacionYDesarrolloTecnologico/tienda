@@ -57,6 +57,10 @@
                     <br/>
                     <br/>
                     <label>
+                        CP
+                    </label>
+                    <input type="number" name="CP" required="required"/>
+                    <label>
                         Telefono celular
                     </label>
                     <input type="number" name="celular" required="required"/>
