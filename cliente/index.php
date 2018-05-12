@@ -8,9 +8,9 @@
     <body>
 		<div class="contenedor_index">
             <div class="logo_index">
-                <center>
+
                 <img class="centro" src="img/logo.png">
-                    </center>
+
             </div>
             <form method="post" action="#" class="formulario_ubicacion">
                 <select id="zona" class="select_1" onchange="aparecer1()">
@@ -44,4 +44,3 @@
         </div>
     </body>
 </html>
-    

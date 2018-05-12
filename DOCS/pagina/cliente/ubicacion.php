@@ -12,7 +12,7 @@
     
         ?>
         <div class="contenido">
-            <center>
+
                 <table class="Ubicacion_tabla" cellpadding="5">
                     <?php
                     $Direccion="AUN NO EXISTO SOLO SOY UNA PRUEBA";
@@ -22,7 +22,7 @@
                     ?>
                 
                 </table>
-            </center>
+
         </div>
     </body>
 </html>

@@ -12,12 +12,12 @@
 		$sql="select productos.preciounitario,productos.NombreP,productos.idnegocio, negocios.Nnegocio,productos.idproducto from productos inner join negocios on productos.idnegocio=negocios.idnegocio where idproducto='".$id_pro."';";
 		$res=mysqli_query($mysqli,$sql);
 		while($fila=mysqli_fetch_array($res)){
-			echo "<br>Precio(".$fila[0]."): ".$fila[1]." de negocio ".$fila[2]."(".$fila[3].")<br>";
+			echo " Precio(".$fila[0]."): ".$fila[1]." de negocio ".$fila[2]."(".$fila[3].") ";
             $idp=$fila[4];
             $precio=$fila[0];
 		}
 	}	
-    $sqlInsercion="insert into detalleventa (idusuario,direccion,producto,subtotaldeproductos,cantidad) values (".$uss.",'Por obtener',".$idp.",".$precio.",1)";
+    $sqlInsercion="insert into detalleventa (idusuario,direccion,idproducto,subtotaldeproductos,cantidad) values (".$uss.",'Por obtener',".$idp.",".$precio.",1)";
     $resInsert=mysqli_query($mysqli,$sqlInsercion);
     if(!$resInsert){
         echo "Oh oh";

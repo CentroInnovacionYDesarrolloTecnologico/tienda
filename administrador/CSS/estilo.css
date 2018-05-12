@@ -1,0 +1,172 @@
+* {
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+}
+body{
+    display: block;
+}
+.cont {
+    height: auto;
+}
+
+/*--------------------------------------------------- Barra lateral ---------------------------------------------------*/
+
+.barra-lateral {
+    border-color: black;
+    border-style: solid;
+    height: 160vh;
+    max-width: 15%;
+    display: block;
+    float: left;
+
+}
+
+.menus {
+    padding-top: 25px;
+    padding-bottom: 50px;
+    font-size: 18px;
+}
+
+.menus li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menus a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+    width: 80%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.barra-superior {
+    border-color: black;
+    border-style: solid;
+    display: block;
+    text-align: center;
+}
+
+/*-------------------------------------------------------- Galeria --------------------------------------------------------*/
+
+.galeria {
+    width: 60%;
+    display: inline-block;
+}
+
+.galeria td {
+    width: 20%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border-color: black;
+    border-style: solid;
+
+}
+
+/*----------------------------------------------------- Cuenta negocio -----------------------------------------------------*/
+
+.cuenta {
+    float: right;
+}
+
+.Formulario-cuenta input {
+    display: block;
+    margin: 0 auto;
+}
+
+.Formulario-negocio input {
+    display: block;
+
+}
+
+.Formulario-negocio select {
+    display: block;
+}
+
+.Formulario-seguridad {
+    display: block;
+
+}
+
+.logo-login img {
+    width: 80%;
+    height: 80%;
+    display: block;
+}
+
+.logo-login {
+    width: 60%;
+    height: 60%;
+}
+
+/*---------------------------------------------------- Inicio sesion ----------------------------------------------------*/
+
+.Formulario-logueo {
+    float: right;
+    display: inline-block;
+    font-size: 20px;
+    width: 30%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    position: absolute;
+    right: 0PX;
+    border-color: black;
+    border-style: solid;
+}
+
+.descripcion-login {
+    display: block;
+    float: left;
+    border-color: black;
+    border-style: solid;
+}
+
+.descrip {
+    width: 70%;
+}
+
+.Formulario-logueo input {
+    display: block;
+}
+
+/*-------------------------------------------------------- Registro --------------------------------------------------------*/
+
+.Registro {
+    display: block;
+    position: relative;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+Registro {
+    display: inline-block;
+}
+
+.Registro h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+}
+
+.datos-negocio-registro {
+    display: block;
+}
+
+.datos-personales-registro {
+    display: block;
+}
+
+.datos-negocio-registro {
+    display: block;
+}

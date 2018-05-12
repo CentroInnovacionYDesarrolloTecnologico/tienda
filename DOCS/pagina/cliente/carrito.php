@@ -12,7 +12,7 @@
     
         ?>
         <div class="contenido">
-            <center> 
+
                 <h1 class="titulo_carrito">
                     Carrito de compras 
                 </h1> 
@@ -22,7 +22,7 @@
                 }
                  echo '</table><table  class="Terminar_compra"><tr><td align="right"> Total de compra:##</td></tr><tr><td align="right"><input type="submit" value="Terminar compra"></td></tr></table>';
                 ?>
-            </center>
+
         </div>
      </body>
 </html>

@@ -13,7 +13,7 @@
     
         ?>
         <div class="contenido">
-            <center>
+
             <table class="tabla_pedido" cellpadding="10" width="80%"cellspacing="5">
                 <tr>
                     <th class="thprueba">
@@ -43,7 +43,7 @@
                     </td>
                 </tr>                
             </table>
-        </center>
+
         </div>
     </body>
 </html>

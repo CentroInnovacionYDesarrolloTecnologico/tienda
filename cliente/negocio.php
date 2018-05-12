@@ -3,7 +3,7 @@
         <title>
             CecyEmprende
         </title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
         <link rel="stylesheet" type="text/css" href="estilo.css">
     </head>
     <body>
@@ -38,7 +38,7 @@
                 </tr>
 				<tr>
                 <?php
-					$sql_prod="select NombreP, preciounitario, idproducto from productos where idNegocio=".$cv.' && disponibilidadProducto=1 order by preciounitario;';
+					$sql_prod="select NombreP, preciounitario, idproducto from productos where idNegocio=".$cv.' && disponibilidad=1 order by preciounitario;';
 					$res1=mysqli_query($mysqli,$sql_prod);
 					$o=0;
 					while($fila = mysqli_fetch_array($res1)){

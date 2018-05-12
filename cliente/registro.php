@@ -27,22 +27,22 @@
 						Usuario:
 					</label>
 					<input name="usu" type="text" required="required"/>
-					<br>
+
 					<label>
 						Nombre:
 					</label>
 					<input id="nombre_usu" name="nom" type="text" required="required"/>
-					<br>
+
 					<label>
 						Apellido paterno:
 					</label>
 					<input name="app" type="text" required="required"/>
-					<br>
+
 					<label>
 						Apellido materno:
 					</label>
 					<input name="apm" type="text" required="required"/>
-					<br>
+
                     <label>
                         Fecha de nacimiento:
                     </label>
@@ -72,22 +72,22 @@
 						Correo electronico:
 					</label>
 					<input onkeyup="validar_contras()" id="c_e" name="c_e" type="text" required="required"/>
-					<br>
+
 					<label>   
 						Confirma tu correo electronico:
 					</label>
 					<input onkeyup="validar_contras()" id="c_e_e" name="c_e_c" type="text" required="required"/>
-					<br>
+
 					<label>
 						Contrase&ntilde;a:
 					</label>
 					<input onkeyup="validar_contras()" id="contra1" name="cont" type="password" required="required"/>
-					<br>
+
                     <label>
 						Confirma tu contrase&ntilde;a:
 					</label>
 					<input onkeyup="validar_contras()"  id="contra2" name="confirm" type="password" required="required"/>
-					<br>
+
 					<input id="paso" class="ex" type="submit" value="Guardar datos" disabled="disabled" />
 					<?php
 						echo '<span style="color:red"><b>Datos erroneos</b></span>';

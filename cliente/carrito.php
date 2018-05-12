@@ -13,17 +13,26 @@
             }
         ?>
         <div class="contenido">
-            <center> 
+
                 <h1 class="titulo_carrito">
                     Carrito de compras 
                 </h1> 
+                <table class="carrito" cellpadding="3">
                 <?php
-                for($i=0;$i<10;$i++){
-                    echo '<table class="carrito" cellpadding="3"> <tr><td><img src="img/producto.jpg" width="20%"></td><td>Nombre de producto</td><td>Precio Total</td> <td>Precio Unitario</td> <td> cantidad:<input type="number" width="50%"/></td></tr>' ;
+                $sqlCarrito="select detalleventa.Direccion,detalleventa.Subtotaldeproductos,sum(detalleventa.Cantidad), productos.NombreP,productos.Preciounitario, negocios.NNegocio, sum(productos.Preciounitario), detalleventa.idDetalleVenta from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where idusuario=".$_SESSION['usrcnf']." group by detalleventa.idproducto;";
+                $resCarrito=mysqli_query($mysqli,$sqlCarrito);
+                while($fila=mysqli_fetch_array($resCarrito)){
+                    echo '<tr><td><img src="img/producto.jpg" width="20%"></td><td>'.$fila[3].'</td><td>'.$fila[4].'</td> <td>'.$fila[6].'</td> <td> cantidad:<input type="number" width="50%" value="'.$fila[2].'" /></td><td><a href="accion_eliminar_carrito.php?detal='.$fila[7].'"><button>Eliminar</button></a></td></tr>';
                 }
-                 echo '</table><table  class="Terminar_compra"><tr><td align="right"> Total de compra:##</td></tr><tr><td align="right"><input type="submit" value="Terminar compra"></td></tr></table>';
+                echo '</table><table  class="Terminar_compra">';
+                $sqlCarritoSuma="select sum(subtotaldeproductos) from detalleventa where idusuario=".$_SESSION['usrcnf'];
+                $resCarritoSuma=mysqli_query($mysqli,$sqlCarritoSuma);
+                while($fila=mysqli_fetch_array($resCarritoSuma)){
+                    echo '<tr><td align="right"> Total de compra:'.$fila[0].'</td></tr><tr><td align="right"><input type="submit" value="Terminar compra"></td></tr>';
+                }
                 ?>
-            </center>
+                </table>
+
         </div>
      </body>
 </html>

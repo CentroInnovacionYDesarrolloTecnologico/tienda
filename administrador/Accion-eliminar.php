@@ -12,5 +12,5 @@
 		}else{
 			echo 'Producto agregado exitosamente';
 		}
-	}	
+	}
 ?>

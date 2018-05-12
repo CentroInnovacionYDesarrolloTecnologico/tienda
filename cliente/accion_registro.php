@@ -19,9 +19,9 @@
             $sql="INSERT INTO `usuarios` (Usuario,PasswordU,Nombres,ApaternoU,AmaternoU,Fnac,Sexo,TcelularU,TcasaU,CorreoU,CP) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."','".$CP."');";
             $res=mysqli_query($mysqli,$sql);
             if(!$res){
-                //header("Location: registro.php?req=1");
+                header("Location: registro.php?req=1");
             }else{
-                //header("Location: login.php");
+                header("Location: login.php");
             }
         }catch (Exception $e) {
             throw 'Excepción capturada: '.  $e->getMessage(). "\n";

@@ -18,7 +18,7 @@
                     </div>
                     <div class="nombre">
                         <h1>
-                            Tienda en linea "CecyEmprende"
+                            Tienda en linea "Patiyotl"
                         </h1>
                     </div>
                     <div class="menu">
