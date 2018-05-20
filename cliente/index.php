@@ -1,16 +1,14 @@
 <html>
     <head>
         <title>
-            CecyEmprende
+            Patiyotl
         </title>
         <link rel="stylesheet" type="text/css" href="estilo.css">
     </head>
     <body>
 		<div class="contenedor_index">
             <div class="logo_index">
-
                 <img class="centro" src="img/logo.png">
-
             </div>
             <form method="post" action="#" class="formulario_ubicacion">
                 <select id="zona" class="select_1" onchange="aparecer1()">

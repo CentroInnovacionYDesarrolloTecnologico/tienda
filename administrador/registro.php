@@ -88,6 +88,8 @@
                 Confirmar contraseña:
                 <input  onkeyup="validar_contras()" type="password"  id="contra2" name="passc_neg" value="" required="required">
 
+
+
                 <input class="ex" id="paso" type="submit" disabled="disabled" value="Registrar"/>
 
             </div>

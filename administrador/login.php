@@ -30,7 +30,7 @@
         <input type="password" name="htPassB" value="">
         <a href="Recupera.php">Olvide mi contraseña</a>
         <a href="Registro.php">Registrarme</a>
-            <a class="boton_personalizado" href="Menu.php">Ingresar</a>
+        <a class="boton_personalizado" href="nueva.php">Ingresar</a>
     </div>
 </body>
 </html>

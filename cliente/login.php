@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            Inicia Sesi&oacute;n - CecyEmprende
+            Inicia Sesi&oacute;n - Patiyotl
         </title>
 
 
@@ -44,4 +44,15 @@
 			</div>
         </div>
     </body>
+    <?php
+        if(isset($_GET['est'])!=0){
+            if(strcmp($_GET['est'],"err")==0){
+                echo '
+                    <script>
+                        window.alert("Contraseña erronea");
+                    </script>
+                ';
+            }
+        }
+    ?>
 </html>

@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            Inicia Sesi&oacute;n - CecyEmprende
+            Inicia Sesi&oacute;n - Patiyotl
         </title>
         <link rel="stylesheet" type="text/css" href="estilo.css">
 		<style>

@@ -11,22 +11,36 @@
   <body bgcolor="#d0d8e5">
       <?php
         include("Barras.php");
+        $id=$_GET['id'];
       ?>
       <div class="producto-visto">
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <a class="btn-atras-catalogo" title="Volver" href="javascript:window.history.go(-1);">volver</a>
+        <a class="btn-atras-catalogo" title="Volver" href="javascript:window.history.go(-1);">Volver</a>
+          <?php
+           $sqlVerP="SELECT NombreP FROM productos WHERE idproducto=".$id.";";
+           $res=mysqli_query($mysqli,$sqlVerP);
+            while($fila=mysqli_fetch_array($res)) {
+            $nompro=$fila[0];
+             }
+         ?>
 
+        <h2><?php echo $nompro; ?></h2>
         <div class="v-prod">
             <img src="img/produc.jpg" width="35%" height="300px" alt="Producto">
           </div>
           <div class="decripcion">
 
-              descripcion
+              Descripcion:
+                    <?php
+                        $sqlVerP="SELECT Descripcion FROM productos WHERE idproducto=".$id.";";
+                        $res=mysqli_query($mysqli,$sqlVerP);
+                        while($fila=mysqli_fetch_array($res)) {
+                            $desc=$fila[0];
+                        }
+                    ?>
+              <textarea name="comment" rows="7" cols="55" form="usrform"><?php echo $desc; ?></textarea>
 
-
-              <textarea name="comment" rows="7" cols="55" form="usrform">Descripcion del producto</textarea>
-
-                <input class="mult_submit" type="submit" name="submit_mult" value="Modificar" title="Modificar descripcion"  >
+              <input class="mult_submit" type="submit" name="submit_mult"   value="Modificar" title="Modificar descripcion">
 
           </div>
           <div class="cantidad">
@@ -38,15 +52,19 @@
             <p>Use los botones para añadir producto en piezas y el cuadro de texto para añadirlo en peso
              (si es en peso recuerda poner punto decimal ejemplo: 1.750---- SOLO NUMEROS) </p>
 
-            <button type="button" name="button" >-</button>
-            <input type="text" name="tipo_de_dato"/>
-            <button type="button" name="button">+</button>
+             <label for="txt_cantidad">      Precio Unitario:</label>
+
+             <?php
+             $sqlVerP="SELECT Preciounitario  FROM productos WHERE idproducto=".$id.";";
+             $res=mysqli_query($mysqli,$sqlVerP);
+             while($fila=mysqli_fetch_array($res)) {
+             $preuni=$fila[0];
+                }
+             ?>
+
+            <input type="text" name="tipo_de_dato" value="<?php echo $preuni; ?>" />
 
             <input class="mult_submit" type="submit" name="submit_mult" value="Modificar" title="Modificar cantidad"  >
-                     <?php
-                        $sqlVerP="";
-                        $res=mysqli_query($mysqli,$sqlVerP);
-                    ?>
           </div>
       </div>
   </body>

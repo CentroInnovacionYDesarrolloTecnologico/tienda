@@ -9,7 +9,7 @@
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sql="INSERT INTO `cecyemprende`.`usuarios` (Usuario,contra,nombre,apellido_p,apellido_m) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."');";
+		$sql="INSERT INTO `Patiyotl`.`usuarios` (Usuario,contra,nombre,apellido_p,apellido_m) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."');";
 		$res=mysqli_query($mysqli,$sql);
 		if(!$res){
 			header("Location: registro.php?req=1");

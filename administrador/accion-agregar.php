@@ -8,7 +8,7 @@
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sql="INSERT INTO `cecyemprende`.`producto` (nombre,descripcion,precio,codigo) VALUES ('".$nom."','".$des."','".$pre."','".$cod."');";
+		$sql="INSERT INTO `Patiyotl`.`productos` (Cbarras,Descripcion,Preciounitario,codigo) VALUES ('".$nom."','".$des."','".$pre."','".$cod."');";
 		$res=mysqli_query($mysqli,$sql);
 		if(!$res){
 			echo 'El producto no pudo ser agregado';

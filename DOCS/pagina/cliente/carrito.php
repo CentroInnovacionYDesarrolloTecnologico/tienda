@@ -1,7 +1,7 @@
  <html>
         <head>
         <title>
-            CecyEmprende
+            Patiyotl
         </title>
         <link rel="stylesheet" type="text/css" href="estilo.css">
     </head>

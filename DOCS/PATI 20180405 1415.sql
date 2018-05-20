@@ -15,11 +15,11 @@
 
 
 --
--- Create schema cecyemprende
+-- Create schema Patiyotl
 --
 
-CREATE DATABASE IF NOT EXISTS cecyemprende;
-USE cecyemprende;
+CREATE DATABASE IF NOT EXISTS Patiyotl;
+USE Patiyotl;
 
 --
 -- Definition of table `negocios`
