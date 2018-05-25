@@ -1,14 +1,14 @@
 <?php
     require("conexion.php");
-    if(isset($id=$_GET['id'])!=0){
-        $id=$_GET['id'];
-        $VerP="UPDATE productos SET Descripcion WHERE idproducto=".$id;
-        echo $VerP;
-        $VerP=mysqli_query($mysqli,);
-        if(!$resEliminarCarrito){
-            echo "Oh no... :c";
-        }else{
-            header("Location: .php");
+    $id=$_GET['id'];
+    $desc=$_GET['Descripcion'];
+        $ActP="UPDATE PRODUCTOS SET Descripcion='.$desc.' WHERE id_Producto='.$id.'";
+        $res=mysqli_query($mysqli, $ActP);
+        if(!$res){
+            echo 'La descripción del producto no pudo ser modificada';
         }
-    }
+        else{
+            echo 'La descripción del producto fue modificada exitosamente';
+            header("location: ver-producto.php");
+        }
 ?>

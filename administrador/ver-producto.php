@@ -8,10 +8,12 @@
 
       <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   </head>
-  <body bgcolor="#d0d8e5">
+  <body>
       <?php
         include("Barras.php");
         $id=$_GET['id'];
+       $id=$_POST['id'];
+       $desc=$POST['Descripcion'];
       ?>
       <div class="producto-visto">
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -24,12 +26,13 @@
              }
          ?>
 
-        <h2><?php echo $nompro; ?></h2>
+        <h2><?php echo $nompro;?></h2>
         <div class="v-prod">
             <img src="img/produc.jpg" width="35%" height="300px" alt="Producto">
           </div>
           <div class="decripcion">
 
+              <form method="post" action="modificardesp.php" >
               Descripcion:
                     <?php
                         $sqlVerP="SELECT Descripcion FROM productos WHERE idproducto=".$id.";";
@@ -39,8 +42,8 @@
                         }
                     ?>
               <textarea name="comment" rows="7" cols="55" form="usrform"><?php echo $desc; ?></textarea>
-
-              <input class="mult_submit" type="submit" name="submit_mult"   value="Modificar" title="Modificar descripcion">
+              <input class="mult_submit" type="submit" name="submit_mult" value="Modificar Descripción" title="Modificar"  >
+              </form>
 
           </div>
           <div class="cantidad">
@@ -55,7 +58,7 @@
              <label for="txt_cantidad">      Precio Unitario:</label>
 
              <?php
-             $sqlVerP="SELECT Preciounitario  FROM productos WHERE idproducto=".$id.";";
+             $sqlVerP="SELECT Preciounitario FROM productos WHERE idproducto=".$id.";";
              $res=mysqli_query($mysqli,$sqlVerP);
              while($fila=mysqli_fetch_array($res)) {
              $preuni=$fila[0];
@@ -64,7 +67,7 @@
 
             <input type="text" name="tipo_de_dato" value="<?php echo $preuni; ?>" />
 
-            <input class="mult_submit" type="submit" name="submit_mult" value="Modificar" title="Modificar cantidad"  >
+            <input class="mult_submit" type="submit" name="submit_mult" value="Modificar Precio" title="Modificar cantidad"  >
           </div>
       </div>
   </body>
