@@ -2,7 +2,7 @@
     session_start();
     require("conexion.php");
     if(!isset($_SESSION['usrcnf'])==0){
-        $sqlCarrito="select count(idDetalleVenta) from detalleVenta where idUsuario=".$_SESSION['usrcnf'];
+        $sqlCarrito="select sum(cantidad) from detalleVenta where idUsuario=".$_SESSION['usrcnf'];
         $resCarrito=mysqli_query($mysqli,$sqlCarrito);
         while($fila=mysqli_fetch_array($resCarrito)){
             $cantidad_productos=$fila[0];

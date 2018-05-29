@@ -1,6 +1,3 @@
-<?php
-	require("conexion.php");
-?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
@@ -90,7 +87,7 @@
 
 
 
-                <input class="ex" id="paso" type="submit" disabled="disabled" value="Registrar"/>
+                <input class="ex" id="paso" type="submit" value="Registrar"/>
 
             </div>
 

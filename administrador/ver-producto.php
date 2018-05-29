@@ -12,8 +12,6 @@
       <?php
         include("Barras.php");
         $id=$_GET['id'];
-       $id=$_POST['id'];
-       $desc=$POST['Descripcion'];
       ?>
       <div class="producto-visto">
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;

@@ -21,7 +21,7 @@
                     $sqlCarrito="select detalleventa.Direccion,detalleventa.Subtotaldeproductos,sum(detalleventa.Cantidad), productos.NombreP,productos.Preciounitario, negocios.NNegocio, sum(productos.Preciounitario), detalleventa.idDetalleVenta,detalleventa.idproducto,detalleventa.idusuario from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.idusuario=".$_SESSION['usrcnf']." group by detalleventa.idproducto;";
                     $resCarrito=mysqli_query($mysqli,$sqlCarrito);
                     while($fila=mysqli_fetch_array($resCarrito)){
-                        echo '<tr><td><img src="img/producto.jpg" width="20%"></td><td>'.$fila[3].'</td><td>'.$fila[4].'</td> <td>$'.$fila[6].'</td> <td> Cantidad: <button onclick="cantidad_reducir('.$fila[8].','.$fila[9].')">&#45;</button> '.$fila[2].' <button onclick="cantidad_aumentar('.$fila[8].','.$fila[9].')">&#43;</button></td><td><a href="accion_eliminar_carrito.php?detal='.$fila[8].'"><button>Eliminar</button></a></td></tr>';
+                        echo '<tr><td><img src="img/producto.jpg" width="20%"></td><td>'.$fila[3].'</td><td>'.$fila[4].'</td> <td>$'.$fila[6].'</td> <td> Cantidad: <button onclick="cantidad_reducir('.$fila[7].','.$fila[9].')">&#45;</button> '.$fila[2].' <button onclick="cantidad_aumentar('.$fila[7].','.$fila[9].')">&#43;</button></td><td><a href="accion_eliminar_carrito.php?detal='.$fila[8].'"><button>Eliminar</button></a></td></tr>';
                     }
                     echo '</table><table  class="Terminar_compra">';
                     $sqlCarritoSuma="select sum(subtotaldeproductos) from detalleventa where idusuario=".$_SESSION['usrcnf'];
