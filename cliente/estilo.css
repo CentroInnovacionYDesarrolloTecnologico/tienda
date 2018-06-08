@@ -6,6 +6,11 @@ a{
     text-decoration: none;
     color: inherit;
 }
+#map{
+    width: 70%;
+    margin:auto;
+    height: 30vh;
+}
 .modal_login{
 	margin-left: 25%;
 	margin-right: auto;

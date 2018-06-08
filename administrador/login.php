@@ -24,13 +24,15 @@
         </div>
     </div>
     <div class="Formulario-logueo">
+        <form action="accion-login.php" method="post">
         <h4>Ingresar usuario:</h4>
-        <input type="text" name="htUsuarioA" value="">
+        <input type="text" name="Nom" value="">
         <h4>Ingresar contraseña:</h4>
-        <input type="password" name="htPassB" value="">
+        <input type="password" name="cont" value="">
+        <input type="submit" name="ingresar" value="Ingresar"/>
+        </form>
         <a href="Recupera.php">Olvide mi contraseña</a>
         <a href="Registro.php">Registrarme</a>
-        <a class="boton_personalizado" href="nueva.php">Ingresar</a>
     </div>
 </body>
 </html>

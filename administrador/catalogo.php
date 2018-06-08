@@ -12,6 +12,7 @@
                 <form class="example" action="#">
                     <input type="text" placeholder="Buscar..." name="search">
                     <button type="submit">Buscar</button>
+                    <a href="agregar-producto.php"><button type="button">Agregar producto</button></a>
                 </form>
 
                 <table class="catalogo_neg" border="2">
@@ -21,7 +22,9 @@
                         </th>
                     </tr>
                     <?php
-                        $sqlCatalogo="SELECT Preciounitario,NombreP,idproducto FROM productos WHERE idnegocio=1;";
+                    session_start();
+                    $uss=$_SESSION['adminLog'];
+                        $sqlCatalogo="SELECT Preciounitario,NombreP,idproducto FROM productos WHERE idnegocio=".$uss.";";
                         $res=mysqli_query($mysqli,$sqlCatalogo);
                         while($fila=mysqli_fetch_array($res)) {
                             echo '<tr>';

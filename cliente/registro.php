@@ -1,52 +1,56 @@
-<html>
-    <head>
-        <title>
-            Inicia Sesi&oacute;n - Patiyotl
-        </title>
-        <link rel="stylesheet" type="text/css" href="estilo.css">
-		<style>
-			input[type=number]::-webkit-outer-spin-button,
-			input[type=number]::-webkit-inner-spin-button {
-				-webkit-appearance: none;
-				margin: 0;
-			}
-			input[type=number] {
-				-moz-appearance:textfield;
-			}
-		</style>
-    </head>
-    <body>
-         <?php
+﻿<html>
+
+<head>
+    <title>
+        Inicia Sesi&oacute;n - CecyEmprende
+    </title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <style>
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+    </style>
+</head>
+
+<body>
+    <?php
             include ("barras.php");
     
         ?>
         <div class="contenido">
-			<div class="modal_registro">
-				<form method="POST" action="accion_registro.php">
-					<label>
+            <div class="modal_registro">
+                <form method="POST" action="accion_registro.php">
+                    <label>
 						Usuario:
 					</label>
-					<input name="usu" type="text" required="required"/>
+                    <input name="usu" type="text" required="required" />
 
-					<label>
+                    <label>
 						Nombre:
 					</label>
-					<input id="nombre_usu" name="nom" type="text" required="required"/>
+                    <input id="nombre_usu" name="nom" type="text" required="required" />
 
-					<label>
+                    <label>
 						Apellido paterno:
 					</label>
-					<input name="app" type="text" required="required"/>
+                    <input name="app" type="text" required="required" />
 
-					<label>
+                    <label>
 						Apellido materno:
 					</label>
-					<input name="apm" type="text" required="required"/>
+                    <input name="apm" type="text" required="required" />
 
                     <label>
                         Fecha de nacimiento:
                     </label>
-                     <input type="date" name="fecha" required="required"/>
+                    <input type="date" name="fecha" required="required" />
                     <label>
                         Sexo:
                     </label>
@@ -59,37 +63,79 @@
                     <label>
                         CP
                     </label>
-                    <input type="number" name="CP" required="required"/>
+                    <input type="number" name="CP" required="required" />
                     <label>
                         Telefono celular
                     </label>
-                    <input type="number" name="celular" required="required"/>
+                    <input type="number" name="celular" required="required" />
                     <label>
                         Telefono Fijo
                     </label>
-                    <input type="number" name="fijo" required="required"/>
+                    <input type="number" name="fijo" required="required" />
                     <label>   
 						Correo electronico:
 					</label>
-					<input onkeyup="validar_contras()" id="c_e" name="c_e" type="text" required="required"/>
+                    <input onkeyup="validar_contras()" id="c_e" name="c_e" type="text" required="required" />
 
-					<label>   
+                    <label>
 						Confirma tu correo electronico:
 					</label>
-					<input onkeyup="validar_contras()" id="c_e_e" name="c_e_c" type="text" required="required"/>
+                    <input onkeyup="validar_contras()" id="c_e_e" name="c_e_c" type="text" required="required" />
 
-					<label>
+                    <label>
 						Contrase&ntilde;a:
 					</label>
-					<input onkeyup="validar_contras()" id="contra1" name="cont" type="password" required="required"/>
+                    <input onkeyup="validar_contras()" id="contra1" name="cont" type="password" required="required" />
 
                     <label>
 						Confirma tu contrase&ntilde;a:
 					</label>
-					<input onkeyup="validar_contras()"  id="contra2" name="confirm" type="password" required="required"/>
+                    <input onkeyup="validar_contras()" id="contra2" name="confirm" type="password" required="required" />
+                                    <div id="map"></div>
+                    <input id="posicionX" name="posicionX" type="hidden"/>
+                    <input id="posicionY" name="posicionY" type="hidden"/>
+                <?php
+    //$lat=19.708458;
+    //$lng=-99.073240;
+     echo '<script>
+      function initMap() {
+        var uluru = {lat:-34.397,lng:150.644};
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: uluru
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+        if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+        var pos = {
+        lat:position.coords.latitude,
+        lng:position.coords.longitude
+        };
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Location found.");
+        map.setCenter(pos);
+        }, function(){
+        handleLocationError(true,infoWindow, map.getCenter());
+        });
+        }else{
+        handleLocationError(false,infoWindow, map.getCenter());
+        }
+              function onEnviar(){
+      document.getElementById("posicionX").value=uluru[lat];
+      document.getElementById("posicionY").value=uluru[lng];
+      }
+      }
+    </script>';
+    ?>
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
+&callback=initMap">
 
-					<input id="paso" class="ex" type="submit" value="Guardar datos" disabled="disabled" />
-					<?php
+
+                    </script>
+
+                    <input id="paso" class="ex" type="submit" value="Guardar datos" disabled="disabled" />
+                    <?php
 						echo '<span style="color:red"><b>Datos erroneos</b></span>';
 					/*
 					Usuario: No espacios
@@ -100,43 +146,47 @@
 					Fecha de mayoria de edad
 					*/
 					?>
-				</form>
-				<span>
+                </form>
+
+                    <span>
 					¿Ya tienes una cuenta?
 					<a href="login.php">
 						Inicia sesi&oacute;n
 					</a>
 				</span>
-			</div>
+            </div>
         </div>
-		<script>
-			var clv1=document.getElementById("contra1").value;
-			var cantidad=clv1.length;
-			var clv2=document.getElementById("contra2").value;
-			var clv10=document.getElementById("c_e").value;
-			var clv20=document.getElementById("c_e_e").value;
-			var enter=document.getElementById("paso");
-			var nombre = document.getElementById("nombre_us");
-			enter.setAttribute("disabled","disabled");
-		</script>
-		<script>
-			function validacion_usuario(){
-				
-			}
-			function validar_contras(){
-				var clv1=document.getElementById("contra1").value;
-				var cantidad=clv1.length;
-				var clv2=document.getElementById("contra2").value;
-				var clv10=document.getElementById("c_e").value;
-				var clv20=document.getElementById("c_e_e").value;
-				var enter=document.getElementById("paso");
-				if(clv1==clv2 && cantidad>=8 && cantidad<=16 && clv10==clv20){
-					enter.removeAttribute("disabled");
-				}else{
-					enter.setAttribute("disabled","disabled");
-				}
-			}
-			
-		</script>
-    </body>
+        <script>
+            var clv1 = document.getElementById("contra1").value;
+            var cantidad = clv1.length;
+            var clv2 = document.getElementById("contra2").value;
+            var clv10 = document.getElementById("c_e").value;
+            var clv20 = document.getElementById("c_e_e").value;
+            var enter = document.getElementById("paso");
+            var nombre = document.getElementById("nombre_us");
+            enter.setAttribute("disabled", "disabled");
+
+        </script>
+        <script>
+            function validacion_usuario() {
+
+            }
+
+            function validar_contras() {
+                var clv1 = document.getElementById("contra1").value;
+                var cantidad = clv1.length;
+                var clv2 = document.getElementById("contra2").value;
+                var clv10 = document.getElementById("c_e").value;
+                var clv20 = document.getElementById("c_e_e").value;
+                var enter = document.getElementById("paso");
+                if (clv1 == clv2 && cantidad >= 8 && cantidad <= 16 && clv10 == clv20) {
+                    enter.removeAttribute("disabled");
+                } else {
+                    enter.setAttribute("disabled", "disabled");
+                }
+            }
+
+        </script>
+</body>
+
 </html>

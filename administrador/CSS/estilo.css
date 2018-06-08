@@ -10,7 +10,12 @@ body{
 .cont {
     height: auto;
 }
-
+#map{
+    width: 70%;
+    margin: auto;
+    height: 30vh;
+    background-color:aqua;
+}
 /*--------------------------------------------------- Barra lateral ---------------------------------------------------*/
 
 .barra-lateral {
