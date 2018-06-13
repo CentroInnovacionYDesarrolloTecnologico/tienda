@@ -19,7 +19,6 @@
             margin-top: 3%;
             margin-bottom: 3%;
         }
-
     </style>
 </head>
 
@@ -39,6 +38,7 @@
                     <label>
 						Nombre:
 					</label>
+<<<<<<< HEAD
 
                     <input id="nombre_usu" name="nom" type="text" required="required" onkeypress="return validados(event)"/>
 
@@ -46,11 +46,23 @@
 						Apellido paterno:
 					</label>
                     <input name="app" type="text" required="required" onkeypress="return validados(event)"/>
+=======
+                    <input id="nombre_usu" name="nom" type="text" required="required" />
+
+                    <label>
+						Apellido paterno:
+					</label>
+                    <input name="app" type="text" required="required" />
+>>>>>>> origin/master
 
                     <label>
 						Apellido materno:
 					</label>
+<<<<<<< HEAD
                     <input name="apm" type="text" required="required" onkeypress="return validados(event)"/>
+=======
+                    <input name="apm" type="text" required="required" />
+>>>>>>> origin/master
 
                     <label>
                         Fecha de nacimiento:
@@ -66,6 +78,7 @@
                     <label>
                         Colonia
                     </label>
+<<<<<<< HEAD
                     <select name="CP" required="required" style="display:block;">
                         <option value="1" >Hacienda Cuautitlan</option>
                     </select>
@@ -77,6 +90,17 @@
                         Telefono Fijo
                     </label>
                     <input type="number" name="fijo" id="fijo" required="required" onkeypress="return valida(event)"/>
+=======
+                    <input type="number" name="CP" required="required" />
+                    <label>
+                        Telefono celular
+                    </label>
+                    <input type="number" name="celular" required="required" />
+                    <label>
+                        Telefono Fijo
+                    </label>
+                    <input type="number" name="fijo" required="required" />
+>>>>>>> origin/master
                     <label>   
 						Correo electronico:
 					</label>
@@ -87,7 +111,11 @@
 					</label>
                     <input onkeyup="validar_contras()" id="c_e_e" name="c_e_c" type="text" required="required" />
 
+<<<<<<< HEAD
                     <label id="contras1">
+=======
+                    <label>
+>>>>>>> origin/master
 						Contrase&ntilde;a:
 					</label>
                     <input onkeyup="validar_contras()" id="contra1" name="cont" type="password" required="required" />
@@ -119,8 +147,11 @@
         infoWindow.setPosition(pos);
         infoWindow.setContent("Location found.");
         map.setCenter(pos);
+<<<<<<< HEAD
         document.getElementById("posicionX").value=position.coords.latitude;
         document.getElementById("posicionY").value=position.coords.longitude;
+=======
+>>>>>>> origin/master
         }, function(){
         handleLocationError(true,infoWindow, map.getCenter());
         });
@@ -137,6 +168,11 @@
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=
 AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
 &callback=initMap">
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
                     </script>
 
                     <input id="paso" class="ex" type="submit" value="Guardar datos" disabled="disabled" />
@@ -164,15 +200,22 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
         <script>
             var clv1 = document.getElementById("contra1").value;
             var cantidad = clv1.length;
+<<<<<<< HEAD
             var cantidad2= clv2.lenght;
+=======
+>>>>>>> origin/master
             var clv2 = document.getElementById("contra2").value;
             var clv10 = document.getElementById("c_e").value;
             var clv20 = document.getElementById("c_e_e").value;
             var enter = document.getElementById("paso");
             var nombre = document.getElementById("nombre_us");
             enter.setAttribute("disabled", "disabled");
+<<<<<<< HEAD
             function validar_contras() {
                 var ad = document.getElementById("adver").value;
+=======
+
+>>>>>>> origin/master
         </script>
         <script>
             function validacion_usuario() {
@@ -188,6 +231,7 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
                 var enter = document.getElementById("paso");
                 if (clv1 == clv2 && cantidad >= 8 && cantidad <= 16 && clv10 == clv20) {
                     enter.removeAttribute("disabled");
+<<<<<<< HEAD
                     ad="";
                 } else {
                     enter.setAttribute("disabled", "disabled");
@@ -268,6 +312,8 @@ input.addEventListener('input',function(){
         return patron.test(tecla_final);
     }
     </script>
+=======
+>>>>>>> origin/master
                 } else {
                     enter.setAttribute("disabled", "disabled");
                 }
