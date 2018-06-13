@@ -22,6 +22,7 @@
                         </th>
                     </tr>
                     <?php
+                    session_start();
                     $uss=$_SESSION['adminLog'];
                         $sqlCatalogo="SELECT Preciounitario,NombreP,idproducto FROM productos WHERE idnegocio=".$uss.";";
                         $res=mysqli_query($mysqli,$sqlCatalogo);

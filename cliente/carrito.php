@@ -79,6 +79,15 @@
                             </table>
                             <br>
                             ';
+                            $totalSUM=$totalSUM+($fila[6]*$fila[2]);
+
+                        }
+                        $sqlCarritoSuma="select sum(detalleventa.subtotaldeproductos) from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=productos.idproducto where idusuario=".$_SESSION['usrcnf']." && negocios.idnegocio=".$fila12[0];
+                        $resCarritoSuma=mysqli_query($mysqli,$sqlCarritoSuma);
+                        while($fila10=mysqli_fetch_array($resCarritoSuma)){
+                            echo '<tr><td align="right"> Total de compra: $'.$totalSUM.'</td></tr><tr><td align="right"><input type="submit" value="Terminar compra"></td></tr>';
+                        }
+
                     }
                 ?>
 

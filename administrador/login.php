@@ -44,3 +44,17 @@ if(isset($_SESSION['adminLog'])==0){
     header("Location: index.php");
 }
 ?>
+    </div>
+    <div class="Formulario-logueo">
+        <form action="accion-login.php" method="post">
+        <h4>Ingresar usuario:</h4>
+        <input type="text" name="Nom" value="">
+        <h4>Ingresar contraseña:</h4>
+        <input type="password" name="cont" value="">
+        <input type="submit" name="ingresar" value="Ingresar"/>
+        </form>
+        <a href="Recupera.php">Olvide mi contraseña</a>
+        <a href="Registro.php">Registrarme</a>
+    </div>
+</body>
+</html>

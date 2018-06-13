@@ -111,7 +111,7 @@
         var infoWindow = new google.maps.InfoWindow({map: map});
         if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
-        pos = {
+        var pos = {
         lat:position.coords.latitude,
         lng:position.coords.longitude
         };
@@ -126,8 +126,10 @@
         }else{
         handleLocationError(false,infoWindow, map.getCenter());
         }
-
-
+              function onEnviar(){
+      document.getElementById("posicionX").value=uluru[lat];
+      document.getElementById("posicionY").value=uluru[lng];
+      }
       }
     </script>';
     ?>
@@ -140,7 +142,7 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
 
                     <input id="paso" class="ex" type="submit" value="Guardar datos" disabled="disabled" />
                     <?php
-						echo '<span style="color:red"><b id="adver"></b></span>';
+						echo '<span style="color:red"><b>Datos erroneos</b></span>';
 					/*
 					Usuario: No espacios
 					Nombre: No numeros, 
@@ -172,6 +174,14 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
             enter.setAttribute("disabled", "disabled");
             function validar_contras() {
                 var ad = document.getElementById("adver").value;
+
+        </script>
+        <script>
+            function validacion_usuario() {
+
+            }
+
+            function validar_contras() {
                 var clv1 = document.getElementById("contra1").value;
                 var cantidad = clv1.length;
                 var clv2 = document.getElementById("contra2").value;
@@ -260,6 +270,12 @@ input.addEventListener('input',function(){
         return patron.test(tecla_final);
     }
     </script>
+                } else {
+                    enter.setAttribute("disabled", "disabled");
+                }
+            }
+
+        </script>
 </body>
 
 </html>

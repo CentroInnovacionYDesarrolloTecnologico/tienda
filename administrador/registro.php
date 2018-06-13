@@ -151,6 +151,45 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
 					*/
 					?>
 
+                <input class="ex" id="paso" type="submit" value="Registrar"/>
+                <input id="posicionX" type="hidden"/>
+                <input id="posicionY" type="hidden"/>
+
+            </div>
+                           <div id="map"></div>
+                            <?php
+    //$lat=19.708458;
+    //$lng=-99.073240;
+     echo '<script>
+      function initMap() {
+        var uluru = {lat:-34.397,lng:150.644};
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: uluru
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+        if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+        var pos = {
+        lat:position.coords.latitude,
+        lng:position.coords.longitude
+        };
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Location found.");
+        map.setCenter(pos);
+        }, function(){
+        handleLocationError(true,infoWindow, map.getCenter());
+        });
+        }else{
+        handleLocationError(false,infoWindow, map.getCenter());
+        }
+              function onEnviar(){
+      document.getElementById("posicionX").value=uluru[lat];
+      document.getElementById("posicionY").value=uluru[lng];
+      }
+      }
+    </script>';
+    ?>
         </form>
     </div>
         <script>
