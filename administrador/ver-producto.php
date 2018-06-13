@@ -30,7 +30,7 @@
           </div>
           <div class="decripcion">
 
-              <form method="post" action="modificardesp.php" >
+              <form method="post" action="modificardesp.php?id=<?php echo $id; ?>">
               Descripcion:
                     <?php
                         $sqlVerP="SELECT Descripcion FROM productos WHERE idproducto=".$id.";";
@@ -39,7 +39,7 @@
                             $desc=$fila[0];
                         }
                     ?>
-              <textarea name="comment" rows="7" cols="55" form="usrform"><?php echo $desc; ?></textarea>
+              <textarea name="Descripcion" rows="7" cols="55"><?php echo $desc; ?></textarea>
               <input class="mult_submit" type="submit" name="submit_mult" value="Modificar Descripción" title="Modificar"  >
               </form>
 
@@ -53,6 +53,7 @@
             <p>Use los botones para añadir producto en piezas y el cuadro de texto para añadirlo en peso
              (si es en peso recuerda poner punto decimal ejemplo: 1.750---- SOLO NUMEROS) </p>
 
+              <form method="post" action="modificarpre.php?id=<?php echo $id; ?>">
              <label for="txt_cantidad">      Precio Unitario:</label>
 
              <?php
@@ -63,9 +64,11 @@
                 }
              ?>
 
-            <input type="text" name="tipo_de_dato" value="<?php echo $preuni; ?>" />
+            <input type="text" name="Preciounitario" value="<?php echo $preuni; ?>" />
 
             <input class="mult_submit" type="submit" name="submit_mult" value="Modificar Precio" title="Modificar cantidad"  >
+
+            </form>
           </div>
       </div>
   </body>

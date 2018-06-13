@@ -9,7 +9,7 @@
 		<h1 style="text-align: center;">
 			Tienda en linea "PATIYOTL"
 		</h1>
-		<a href="administrador/index.php">	
+		<a href="administrador/login.php">
 			<div class="admin_opc">
 				<img src="img/693.jpg">
 				<h2>
@@ -17,7 +17,7 @@
 				</h2>
 			</div>
 		</a>
-		<a href="cliente/index.php">	
+		<a href="cliente/menu_principal.php">
 			<div class="user_opc">
 				<img src="img/692.jpg">
 				<h2>

@@ -15,22 +15,73 @@
         <div class="contenido">
                 <h1 class="titulo_carrito">
                     Carrito de compras 
-                </h1> 
-                <table class="carrito" cellpadding="3">
+                </h1>
                 <?php
-                    $sqlCarrito="select detalleventa.Direccion,detalleventa.Subtotaldeproductos,sum(detalleventa.Cantidad), productos.NombreP,productos.Preciounitario, negocios.NNegocio, sum(productos.Preciounitario), detalleventa.idDetalleVenta,detalleventa.idproducto,detalleventa.idusuario from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.idusuario=".$_SESSION['usrcnf']." group by detalleventa.idproducto;";
-                    $resCarrito=mysqli_query($mysqli,$sqlCarrito);
-                    while($fila=mysqli_fetch_array($resCarrito)){
-                        echo '<tr><td><img src="img/producto.jpg" width="20%"></td><td>'.$fila[3].'</td><td>'.$fila[4].'</td> <td>$'.$fila[6].'</td> <td> Cantidad: <button onclick="cantidad_reducir('.$fila[7].','.$fila[9].')">&#45;</button> '.$fila[2].' <button onclick="cantidad_aumentar('.$fila[7].','.$fila[9].')">&#43;</button></td><td><a href="accion_eliminar_carrito.php?detal='.$fila[8].'"><button>Eliminar</button></a></td></tr>';
-                    }
-                    echo '</table><table  class="Terminar_compra">';
-                    $sqlCarritoSuma="select sum(subtotaldeproductos) from detalleventa where idusuario=".$_SESSION['usrcnf'];
-                    $resCarritoSuma=mysqli_query($mysqli,$sqlCarritoSuma);
-                    while($fila=mysqli_fetch_array($resCarritoSuma)){
-                        echo '<tr><td align="right"> Total de compra: $'.$fila[0].'</td></tr><tr><td align="right"><input type="submit" value="Terminar compra"></td></tr>';
+                    $sqlNegoCarrito="select negocios.idnegocio, negocios.NNegocio from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.status=1 group by negocios.idnegocio";
+                    $resNegoCarrito=mysqli_query($mysqli,$sqlNegoCarrito);
+                    while($fila12=mysqli_fetch_array($resNegoCarrito)){
+                        echo ' <table class="carrito" cellpadding="3">';
+                        echo '<tr><th colspan="6">'.$fila12[1].'</th></tr>';
+                        $sqlCarrito="select detalleventa.Direccion,detalleventa.Subtotaldeproductos,sum(detalleventa.Cantidad), productos.NombreP,productos.Preciounitario, negocios.NNegocio, productos.Preciounitario, detalleventa.idDetalleVenta,detalleventa.idproducto,detalleventa.idusuario from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.idusuario=".$_SESSION['usrcnf']." && negocios.idnegocio=".$fila12[0]." && detalleventa.status=1 group by detalleventa.idproducto;";
+                        $resCarrito=mysqli_query($mysqli,$sqlCarrito);
+                        $totalSUM=0;
+                        $conta=0;
+                        $send="";
+                        while($fila=mysqli_fetch_array($resCarrito)){
+
+                            echo '<tr>
+                                    <td>
+                                        <img src="img/producto.jpg" width="20%">
+                                    </td>
+                                    <td>
+                                        '.$fila[3].'
+                                    </td>
+                                    <td>
+                                        '.$fila[4].'
+                                    </td>
+                                    <td>
+                                        $'.$fila[6].'
+                                    </td>
+                                    <td>
+                                        Cantidad:
+                                        <button onclick="cantidad_reducir('.$fila[7].','.$fila[9].')">
+                                            &#45;
+                                        </button>
+                                        '.$fila[2].'
+                                        <button onclick="cantidad_aumentar('.$fila[7].','.$fila[9].')">
+                                            &#43;
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <a href="accion_eliminar_carrito.php?detal='.$fila[8].'">
+                                            <button>
+                                                Eliminar
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>';
+                                $send=$send."&dett".$conta."=".$fila[7];
+                                $conta++;
+                            $totalSUM=$totalSUM+($fila[6]*$fila[2]);
+
+                        }
+                            echo '
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td>
+                                <td align="right"> Total de compra: $'.$totalSUM.'</td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td>
+                                <td align="right" colspan="2">
+                                    <a href="procesar_compra.php?neg='.$fila12[0].$send.'&cant='.$conta.'"><input type="submit" value="Terminar compra"></a>
+                                </td>
+                            </tr>
+                            </table>
+                            <br>
+                            ';
                     }
                 ?>
-                </table>
+
                 <script>
                     function cantidad_reducir(prod,usu){
                         window.location="accion_carrito_cantidad.php?pro=menos&&prod="+prod+"&&usu="+usu;

@@ -10,13 +10,15 @@
 	$fijo=$_POST['fijo'];
 	$correo=$_POST['c_e'];
     $CP=$_POST['CP'];
+    $PX=$_POST['posicionX'];
+    $PY=$_POST['posicionY'];
 	require("conexion.php");
 	if ($mysqli->connect_errno) {
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
         try{
-            $sql="INSERT INTO `usuarios` (Usuario,PasswordU,Nombres,ApaternoU,AmaternoU,Fnac,Sexo,TcelularU,TcasaU,CorreoU,CP) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."','".$CP."');";
+            $sql="INSERT INTO `usuarios` (Usuario,PasswordU,Nombres,ApaternoU,AmaternoU,Fnac,Sexo,TcelularU,TcasaU,CorreoU,idColonia,Rangoyu,Rangoxu) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."','".$CP."','".$PY."','".$PX."');";
             $res=mysqli_query($mysqli,$sql);
             if(!$res){
                 header("Location: registro.php?req=1");

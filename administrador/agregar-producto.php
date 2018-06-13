@@ -9,16 +9,16 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 
-<body bgcolor="#d0d8e5">
+<body>
 
     <?php
       include("Barras.php");
-        ?>
+    ?>
 
     <div class="add-producto">
-        <button type="button" class="btn-back" title="Volver al catalogo" name="button"><a href="Catalogo.php">Regresar</a> </button>
+        <a href="Catalogo.php"><button type="button" class="btn-back" title="Volver al catalogo" name="button">Regresar</button></a>
         <div class="imagen-agregar-producto">
-            <button type="button" title="Agregar imagen del producto" name="button"><img src="img/agregar-imagen.jpg" title="Agregar imagen del producto" width="100%" class="img-add-pp" alt=""></button>
+            <button type="button" title="Agregar imagen del producto" name="button">Agregar imagen<img src="img/agregar-imagen.jpg" title="Agregar imagen del producto" width="100%" class="img-add-pp" alt=""></button>
         </div>
         <div class="Agregaaar">
             <h1>Agregar nuevo producto</h1>

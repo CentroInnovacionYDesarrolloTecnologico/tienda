@@ -17,7 +17,7 @@
             $precio=$fila[0];
 		}
 	}	
-    $sqlInsercion="insert into detalleventa (idusuario,direccion,idproducto,subtotaldeproductos,cantidad) values (".$uss.",'Por obtener',".$idp.",".$precio.",1)";
+    $sqlInsercion="insert into detalleventa (idusuario,direccion,idproducto,subtotaldeproductos,cantidad,status) values (".$uss.",'Por obtener',".$idp.",".$precio.",1,1)";
     $resInsert=mysqli_query($mysqli,$sqlInsercion);
     if(!$resInsert){
         echo "Oh oh";

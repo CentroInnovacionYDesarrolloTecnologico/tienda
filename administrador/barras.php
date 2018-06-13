@@ -1,4 +1,6 @@
 <?php
+session_start();
+if(isset($_SESSION['adminLog'])!=0){
 require("conexion.php");
 echo'
 <div class="barra-superior">
@@ -19,9 +21,12 @@ echo'
                 <li><a href="Ventas.php">Ventas</a> </li>
                 <li><a href="Calificaciones.php">Calificaciones</a> </li>
                 <li><a href="Cuenta.php">Mi cuenta</a> </li>
-                <li><a href="Login.php">Cerrar sesion</a> </li>
+                <li><a href="logout.php">Cerrar sesion</a> </li>
             </ul>
         </div>
     </div>
 </div>';
+}else{
+    header("Location: login.php");
+}
 ?>

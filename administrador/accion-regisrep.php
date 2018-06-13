@@ -8,19 +8,19 @@
     $gir_neg=$_POST['giro_neg'];
     $est_nneg=$_POST['est_neg'];
     $munn_neg=$_POST['muni_neg'];
-    $colo_negg=$_POST['colo_neg'];
-    $cpp_negg=$_POST['cpp_neg'];
+    $Duo=$_POST['Duo'];
     $call_negg=$_POST['call_neg'];
     $telm_negg=$_POST['telm_neg'];
     $tell_negg=$_POST['tell_neg'];
     $corr_negg=$_POST['corr_neg'];
-    $usu_negg=$_POST['usu_neg'];
+    $PX=$_POST['posicionX'];
+    $PY=$_POST['posicionY'];
 	$pass=password_hash($_POST['pass_neg'],PASSWORD_DEFAULT);
 	if ($mysqli->connect_errno) {
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sql="INSERT INTO `patiyotl`.`negocios` (CorreoRN,NombreRN,ApaternoRN,AmaternoRN,TcasaN,ColoniaN,Razon,TcelN,PasswordN,Calle,NNegocio,Estado,Municipio,FnacRN) VALUES ('".$corr_negg."','".$nom_due."','".$ap_duen."','".$am_duen."','".$telm_negg."','".$colo_negg."','".$gir_neg."','".$tell_negg."','".$pass."','".$call_negg."','".$nombre_dd."','".$est_nneg."','".$munn_neg."','".$nacc_duen."');";
+		$sql="INSERT INTO `patiyotl`.`negocios` (CorreoRN,NombreRN,ApaternoRN,AmaternoRN,TcasaN,Razon,TcelN,PasswordN,Calle,NNegocio,Estado,Municipio,idColonia,FnacRN,Rangoxn,Rangoyn) VALUES ('".$corr_negg."','".$nombre_dd."','".$ap_duen."','".$am_duen."','".$tell_negg."','".$gir_neg."','".$telm_negg."','".$pass."','".$call_negg."','".$nom_ne."','".$est_nneg."','".$munn_neg."','".$Duo."','".$nacc_duen."','".$PX."','".$PY."');";
 		$res=mysqli_query($mysqli,$sql);
         if(!$res){
             echo 'El producto no puede ser agregado';
