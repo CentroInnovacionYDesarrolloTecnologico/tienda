@@ -15,10 +15,13 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
+<<<<<<< HEAD
         select{
             margin-top: 3%;
             margin-bottom: 3%;
         }
+=======
+>>>>>>> origin/master
 
     </style>
 </head>
@@ -39,6 +42,7 @@
                     <label>
 						Nombre:
 					</label>
+
                     <input id="nombre_usu" name="nom" type="text" required="required" onkeypress="return validados(event)"/>
 
                     <label>
@@ -136,8 +140,6 @@
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=
 AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
 &callback=initMap">
-
-
                     </script>
 
                     <input id="paso" class="ex" type="submit" value="Guardar datos" disabled="disabled" />

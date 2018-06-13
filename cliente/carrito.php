@@ -28,7 +28,6 @@
                         $conta=0;
                         $send="";
                         while($fila=mysqli_fetch_array($resCarrito)){
-
                             echo '<tr>
                                     <td>
                                         <img src="img/producto.jpg" width="20%">
@@ -79,7 +78,6 @@
                             </table>
                             <br>
                             ';
-                            $totalSUM=$totalSUM+($fila[6]*$fila[2]);
 
                         }
                         $sqlCarritoSuma="select sum(detalleventa.subtotaldeproductos) from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=productos.idproducto where idusuario=".$_SESSION['usrcnf']." && negocios.idnegocio=".$fila12[0];
