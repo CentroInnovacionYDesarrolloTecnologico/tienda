@@ -15,13 +15,10 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
-<<<<<<< HEAD
         select{
             margin-top: 3%;
             margin-bottom: 3%;
         }
-=======
->>>>>>> origin/master
 
     </style>
 </head>
@@ -176,7 +173,6 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
             enter.setAttribute("disabled", "disabled");
             function validar_contras() {
                 var ad = document.getElementById("adver").value;
-
         </script>
         <script>
             function validacion_usuario() {
