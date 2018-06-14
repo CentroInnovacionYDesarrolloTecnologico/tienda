@@ -43,10 +43,20 @@
                                     </td>
                                     <td>
                                         Cantidad:
-                                        <button onclick="cantidad_reducir('.$fila[7].','.$fila[9].')">
+                                        <button id="reducir_'.$fila[8].'" onclick="cantidad_reducir('.$fila[7].','.$fila[9].')">
                                             &#45;
                                         </button>
-                                        '.$fila[2].'
+                                        ';
+                                        if($fila[2]<=1){
+                                            echo '
+                                                <script>
+                                                    var boton_r=document.getElementById("reducir_'.$fila[8].'");
+                                                    boton_r.disabled=true;
+                                                </script>
+                                            ';
+                                        }
+                                        echo $fila[2];
+                                        echo '
                                         <button onclick="cantidad_aumentar('.$fila[7].','.$fila[9].')">
                                             &#43;
                                         </button>
@@ -64,28 +74,30 @@
                             $totalSUM=$totalSUM+($fila[6]*$fila[2]);
 
                         }
-                            echo '
-                            <tr>
-                                <td></td><td></td><td></td><td></td><td></td>
-                                <td align="right"> Total de compra: $'.$totalSUM.'</td>
-                            </tr>
-                            <tr>
-                                <td></td><td></td><td></td><td></td>
-                                <td align="right" colspan="2">
-                                    <a href="procesar_compra.php?neg='.$fila12[0].$send.'&cant='.$conta.'"><input type="submit" value="Terminar compra"></a>
-                                </td>
-                            </tr>
-                            </table>
-                            <br>
-                            ';
+                        echo '
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td>
+                            <td align="right"> Total de compra: $'.$totalSUM.'</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td>
+                            <td align="right" colspan="2">
+                                <a href="procesar_compra.php?neg='.$fila12[0].$send.'&cant='.$conta.'"><input type="submit" value="Terminar compra"></a>
+                            </td>
+                        </tr>
+                        </table>
+                        <br>
+                        ';
 
-                        }
-                        $sqlCarritoSuma="select sum(detalleventa.subtotaldeproductos) from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=productos.idproducto where idusuario=".$_SESSION['usrcnf']." && negocios.idnegocio=".$fila12[0];
-                        $resCarritoSuma=mysqli_query($mysqli,$sqlCarritoSuma);
-                        while($fila10=mysqli_fetch_array($resCarritoSuma)){
-                            echo '<tr><td align="right"> Total de compra: $'.$totalSUM.'</td></tr><tr><td align="right"><input type="submit" value="Terminar compra"></td></tr>';
-                        }
 
+
+                    }
+                    if(isset($_GET['proc'])!=0 && strcmp($_GET['proc'],"exito")==0){
+                        echo '
+                            <script>
+                                window.alert("Compra procesada con exito");
+                            </script>
+                        ';
                     }
                 ?>
 

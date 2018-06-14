@@ -3,7 +3,7 @@
     require("conexion.php");
     extract($_GET);
     $us=$_SESSION['usrcnf'];
-    $sqlCompra="select sum(productos.Preciounitario*detalleventa.Cantidad) from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto where detalleventa.idusuario=".$us." && productos.idnegocio=".$_GET['neg'];
+    $sqlCompra="select sum(productos.Preciounitario*detalleventa.Cantidad) from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto where detalleventa.idusuario=".$us." && detalleventa.status=1 && productos.idnegocio=".$_GET['neg'];
     $resCompra=mysqli_query($mysqli,$sqlCompra);
     while($fila=mysqli_fetch_array($resCompra)){
         echo $fila[0]."<br>";
@@ -27,10 +27,17 @@
         for($it=0;$it<$cant;$it++){
             $sqlUpdCarrito="update detalleventa set status=0 where iddetalleventa=".$_GET['dett'.$it].";";
             $resUpdCarrito=mysqli_query($mysqli,$sqlUpdCarrito);
-            if(!$resUpdCarrito){
-                $sqlInsRDV="insert into RDV () values ();";
+            if($resUpdCarrito){
+                $sqlidVenta="select idventa from ventas where folio='".$folioCod."';";
+                echo $sqlidVenta;
+                $residVenta=mysqli_query($mysqli,$sqlidVenta);
+                while($fila10=mysqli_fetch_array($residVenta)){
+                    $idVenta=$fila10[0];
+                }
+                $sqlInsRDV="insert into RDV (idventa,iddetalleventa) values (".$idVenta.",".$_GET['dett'.$it].");";
+                $resInsRDV=mysqli_query($mysqli,$sqlInsRDV);
             }
         }
-        header("Location: Carrito.php");
+        header("Location: Carrito.php?proc=exito");
     }
 ?>

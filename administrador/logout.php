@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	unset($_SESSION['usrcnf']);
+	unset($_SESSION['adminLog']);
 	session_unset();
 
 	session_destroy();
