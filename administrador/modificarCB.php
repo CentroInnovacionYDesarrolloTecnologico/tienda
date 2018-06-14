@@ -1,17 +1,17 @@
 <?php
-	$desc=$_POST['Descripcion'];
+	$CB=$_POST['CB'];
     $id=$_GET['id'];
 	require("conexion.php");
 	if ($mysqli->connect_errno) {
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sql="UPDATE Productos SET Descripcion='".$desc."' WHERE idproducto=".$id;
+		$sql="UPDATE Productos SET Cbarras='".$CB."' WHERE idproducto=".$id;
 		$res=mysqli_query($mysqli,$sql);
 		if(!$res){
-			echo 'La descripción del producto no pudo ser modificada ';
+			echo 'El precio unitario del producto no pudo ser modificado';
 		}else{
-			header("Location: ver-producto.php?id=".$id);
+			header ('Location: Catalogo.php');
 		}
 	}
 ?>

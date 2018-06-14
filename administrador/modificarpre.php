@@ -11,7 +11,7 @@
 		if(!$res){
 			echo 'El precio unitario del producto no pudo ser modificado';
 		}else{
-			echo 'El precio unitario del producto fue modificado exitosamente';
+			header("Location: ver-producto.php?id=".$id);
 		}
 	}
 ?>

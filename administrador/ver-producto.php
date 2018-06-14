@@ -14,7 +14,6 @@
         $id=$_GET['id'];
       ?>
       <div class="producto-visto">
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <a class="btn-atras-catalogo" title="Volver" href="javascript:window.history.go(-1);">Volver</a>
           <?php
            $sqlVerP="SELECT NombreP FROM productos WHERE idproducto=".$id.";";
@@ -25,6 +24,19 @@
          ?>
 
         <h2><?php echo $nompro;?></h2>
+        <div class="Codigo-Barras">
+                <?php
+                    $sqlVerP="SELECT Cbarras FROM productos WHERE idproducto=".$id.";";
+                    $res=mysqli_query($mysqli,$sqlVerP);
+                    while($fila=mysqli_fetch_array($res)) {
+                        $CB=$fila[0];
+                    }
+                ?>
+            <p>
+            <label for="txt_CB">Codigo de barras</label>
+            </p>
+            <?php echo $CB; ?>
+        </div>
         <div class="v-prod">
             <img src="img/produc.jpg" width="35%" height="300px" alt="Producto">
           </div>
@@ -44,17 +56,11 @@
               </form>
 
           </div>
-          <div class="cantidad">
-            <p>Cantidad disponible para tienda en linea:
-            <label for="txt_cantidad">      12</label>
-            </p>
-          </div>
+
           <div class="btn_addpr">
-            <p>Use los botones para añadir producto en piezas y el cuadro de texto para añadirlo en peso
-             (si es en peso recuerda poner punto decimal ejemplo: 1.750---- SOLO NUMEROS) </p>
 
               <form method="post" action="modificarpre.php?id=<?php echo $id; ?>">
-             <label for="txt_cantidad">      Precio Unitario:</label>
+             <label for="txt_cantidad">Precio Unitario:</label>
 
              <?php
              $sqlVerP="SELECT Preciounitario FROM productos WHERE idproducto=".$id.";";

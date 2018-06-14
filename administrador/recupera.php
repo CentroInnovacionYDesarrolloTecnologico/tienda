@@ -10,22 +10,22 @@
 </head>
 
 <body>
-    <div class="barra-superior">
-            <h1>PATIYOTL</h1>
-        <div class="logo-reg">
-            <a href="login.php"><img src="img/logo-812763_960_720.png"   width="30%" alt="Volver"></a>
-
+        <div class="barra-superior">
+            <div class="titulo">
+                <h1>
+                    <img src="img/2.png"/>
+                </h1>
+            </div>
         </div>
-    </div>
     <div class="boton-volver">
-        <button type="button" name="button"><a href="Login.php">Volver atras</a> </button>
+        <a href="Login.php"><button type="button" name="button">Volver atras</button></a>
     </div>
     <div class="Registro">
             <h1>Recuperacion de contraseña </h1>
         &emsp;&emsp;&emsp;&emsp;Ingresa tu correo o nombre de usuario
         <div class="Datos-personales-registro">
                 <h4></h4>
-                <h5>Ingresa tucorreo o nombre de usuario para poder enviarte un codigo (solo uno) </h5> Nombre de usuario:
+                <h5>Ingresa tu correo o nombre de usuario para poder enviarte un codigo (solo uno) </h5> Nombre de usuario:
                 <input type="text" name="htNombreA" value="" size="25" required="required"> Correo:
                 <input type="text" name="htApellidopB" value="" size="25" required="required">
         </div>
@@ -33,7 +33,7 @@
                 <h4></h4>
                 <h5>Ingresa el codigo que te fue enviado </h5>
                 <input type="text" name="" value="">
-                <a class="Recupera-password" href="Nueva.php">Recuperar contraseña</a>
+                <a class="Recupera-password" href="#">Recuperar contraseña</a>
         </div>
     </div>
 

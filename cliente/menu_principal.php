@@ -12,7 +12,7 @@
         ?>
         <div class="contenido">
 			<?php
-				$consul_neg="select nnegocio, razon, idnegocio from negocios where statusN!=0;";
+				$consul_neg="select nnegocio, razon, idnegocio,estado,municipio,calle,tceln from negocios where statusN!=0;";
 				$res=mysqli_query($mysqli,$consul_neg);
 				while($fila = mysqli_fetch_array($res)){
 					echo '
@@ -25,8 +25,10 @@
 								<img src="tiendita.png">
 							</span>
 							<p>
-								Direccion completa
-							</p>
+                                '.$fila[3].', '.$fila[4].', '.$fila[5].'
+                                <br>
+                                '.$fila[6].'
+                            </p>
 							<h4>
 								'.$fila[1].'
 							</h4>

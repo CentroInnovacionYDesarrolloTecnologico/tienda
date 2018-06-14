@@ -3,29 +3,24 @@ session_start();
 if(isset($_SESSION['adminLog'])!=0){
 require("conexion.php");
 echo'
-<div class="barra-superior">
-    <div class="titulo">
-        <h1>PATIYOTL</h1>
-    </div>
-</div>
-<div class="cont">
-    <div class="barra-lateral" >
-        <div class="logo">
-            <a href="index.php">
-              <img class="logo_pati" src="img/logo-812763_960_720.png" title="Menu" alt="logo"/>
+<div class="barra-lateral" >
+    <div class="logo">
+        <a href="index.php">
+            <img class="logo_pati" src="img/2.png" title="Menu" alt="logo"/>
             </a>
         </div>
         <div class="opciones">
             <ul class="menus">
-                <li><a href="Catalogo.php">Mi catalogo</a></li>
-                <li><a href="Ventas.php">Ventas</a> </li>
-                <li><a href="Calificaciones.php">Calificaciones</a> </li>
-                <li><a href="Cuenta.php">Mi cuenta</a> </li>
-                <li><a href="logout.php">Cerrar sesion</a> </li>
+                <a href="Catalogo.php"><li>Mi catalogo</li></a>
+                <a href="Ventas.php"><li>Ventas</li></a>
+                <a style="display: none;" href="Calificaciones.php"><li>Calificaciones</li></a>
+                <a href="Cuenta.php"><li>Mi cuenta</li></a>
+                <a href="Logout.php"><li>Cerrar sesion</li></a>
             </ul>
         </div>
     </div>
-</div>';
+    <div class="cont">
+';
 }else{
     header("Location: login.php");
 }

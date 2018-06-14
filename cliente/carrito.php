@@ -62,7 +62,7 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <a href="accion_eliminar_carrito.php?detal='.$fila[8].'">
+                                        <a href="accion_eliminar_carrito.php?detal='.$fila[7].'">
                                             <button>
                                                 Eliminar
                                             </button>

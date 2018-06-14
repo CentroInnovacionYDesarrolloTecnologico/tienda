@@ -38,7 +38,7 @@
                 </tr>
 				<tr>
                 <?php
-					$sql_prod="select NombreP, preciounitario, idproducto from productos where idNegocio=".$cv.' && disponibilidad=1 order by preciounitario;';
+					$sql_prod="select NombreP, preciounitario, idproducto,descripcion from productos where idNegocio=".$cv.' && disponibilidad=1 order by preciounitario;';
 					$res1=mysqli_query($mysqli,$sql_prod);
 					$o=0;
 					while($fila = mysqli_fetch_array($res1)){
@@ -53,11 +53,11 @@
 							</div>
 							<div class="producto_desc">
 								<p>
-									Descripcion
+									'.$fila[3].'
 								</p>
 								<div class="Precio">
 									<p align="left"> 
-										Precio: '.$fila[1].'
+										Precio: $'.$fila[1].'
 									</p>
 								</div>
 								<div class="BOTON_COMPRA">

@@ -1,9 +1,9 @@
 <?php
     session_start();
     require("conexion.php");
+$cantidad_productos=0;
     if(!isset($_SESSION['usrcnf'])==0){
-        $sqlCarrito="select sum(cantidad) from detalleVenta where status=1 && idUsuario=".$_SESSION['usrcnf'];
-        $cantidad_productos=0;
+        $sqlCarrito="select count(iddetalleventa) from detalleVenta where status=1 && idUsuario=".$_SESSION['usrcnf']."";
         $resCarrito=mysqli_query($mysqli,$sqlCarrito);
         while($fila=mysqli_fetch_array($resCarrito)){
             $cantidad_productos=$fila[0];
@@ -15,11 +15,10 @@
     
                 <div class="cabecera">
                     <div class="logo">
-                       <a href="menu_principal.php"> <img src="img/logo-812763_960_720.png" width="35%"></a>
+                       <a href="menu_principal.php"> <img src="img/21.png"" width="95%"></a>
                     </div>
                     <div class="nombre">
                         <h1>
-                            Tienda en linea "Patiyotl"
                         </h1>
                     </div>
                     <div class="menu">
@@ -28,6 +27,7 @@
                                 <h2>
                                     Cuenta
                                 </h2>
+
                             </a>
                             <div class="contenido_desplegable">';
 							if(isset($_SESSION['usrcnf'])==0){
@@ -35,15 +35,16 @@
 								<a href="login.php">Iniciar sesi&oacute;n</a>
 								';
 							}else{
-                                echo '<a href="tiendas.php">Mis tiendas</a>
-                                <a href="pedidos.php">Pedidos pendientes</a>
+                                echo '<a href="tiendas.php" style="display:none;">Mis tiendas</a>
+                                <a href="pedidos.php">Ultimos pedidos</a>
                                 <a href="Carrito.php">Carrito: ';
-                                if($cantidad_productos==0){
-                                    echo 'No hay productos';
-                                }else{
+                                if($cantidad_productos!=0){
                                     echo $cantidad_productos;
+                                }else{
+                                    echo "No hay productos";
                                 }
                                 echo '</a>
+                                <a href="Modificar_cuenta.php">Modificar cuenta </a>
                                 <a href="logout.php">Cerrar sesi&oacute;n</a>';
 							}
 							echo '

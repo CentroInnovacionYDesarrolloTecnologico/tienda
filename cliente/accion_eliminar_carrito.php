@@ -2,7 +2,7 @@
     require("conexion.php");
     if(isset($_GET['detal'])!=0){
         $prod=$_GET['detal'];
-        $sqlEliminarCarrito="delete from detalleventa where idproducto=".$prod;
+        $sqlEliminarCarrito="delete from detalleventa where iddetalleventa=".$prod;
         echo $sqlEliminarCarrito;
         $resEliminarCarrito=mysqli_query($mysqli,$sqlEliminarCarrito);
         if(!$resEliminarCarrito){

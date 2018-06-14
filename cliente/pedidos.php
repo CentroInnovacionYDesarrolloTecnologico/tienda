@@ -21,7 +21,7 @@
                     </th>
                 </tr>
                 <?php
-                    $sqlPedidos="select ventas.total,ventas.fecha,rdv.iddetalleventa,ventas.idventa,negocios.nnegocio,ventas.folio from rdv inner join ventas on rdv.idventa=ventas.idventa inner join detalleventa on rdv.iddetalleventa=detalleventa.iddetalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where ventas.statusV=1 group by ventas.idventa order by ventas.fecha desc";
+                    $sqlPedidos="select ventas.total,ventas.fecha,rdv.iddetalleventa,ventas.idventa,negocios.nnegocio,ventas.folio from rdv inner join ventas on rdv.idventa=ventas.idventa inner join detalleventa on rdv.iddetalleventa=detalleventa.iddetalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.idusuario=".$_SESSION['usrcnf']." && ventas.statusV=1 group by ventas.idventa order by ventas.fecha desc";
                     $resPedidos=mysqli_query($mysqli,$sqlPedidos);
                     while($fila=mysqli_fetch_array($resPedidos)){
                         echo '<tr><td>Tienda: <b>'.$fila[4].'</b> | Folio: '.$fila[5].'</td></tr>';
@@ -38,7 +38,7 @@
                         }
                         echo '
                             <tr>
-                                <td>Total: '.$fila[0].'</td>
+                                <td>Total: $'.$fila[0].'</td>
                             </tr>
                             <tr>
                                 <td>----------------------------------------------------------------------------------</td>

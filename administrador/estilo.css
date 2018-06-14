@@ -3,11 +3,8 @@
     margin-right: 0;
     margin-left: 0;
     margin-top: 0;
-    font-family: sans-serif;
 }
 body{
-    background: radial-gradient(1300px, #7bd1df,#000);
-    margin: 0px;
     display: block;
 }
 .cont {
@@ -144,44 +141,23 @@ body{
 }
 
 .logo-login {
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 50%;
+    height: 50%;
 }
-.inicio_ses{
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 /*---------------------------------------------------- Inicio sesion ----------------------------------------------------*/
 
 .Formulario-logueo {
-    font-size: 17px;
+    font-size: 20px;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border: 2px #ccc solid;
-    border-radius: 15px;
-    padding: 15px;
-    background: radial-gradient(2000px, #7bd1df,#000);;
-}
-.Formulario-logueo *{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.Formulario-logueo form h4, .Formulario-logueo form input {
-    margin-bottom: 15px;
+    border-color: black;
+    border-style: solid;
 }
 
 .descripcion-login {
+    border-color: black;
+    border-style: solid;
     width:40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    text-align: center;
 }
 
 .descrip {
@@ -228,10 +204,4 @@ h6 {
 
 .datos-negocio-registro {
     display: block;
-}
-.catalogo_neg, .Ventas, .items-hp, .formu_cuenta, .galeria{
-    background-color: aliceblue;
-}
-.formu_cuenta{
-    padding: 28px;
 }
