@@ -21,6 +21,9 @@ body{
     margin: auto;
     height: 30vh;
 }
+.ex{
+
+}
 /*--------------------------------------------------- Barra lateral ---------------------------------------------------*/
 
 .barra-lateral {
@@ -203,19 +206,24 @@ body{
     width: 30vw;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
-Registro {
-    display: inline-block;
+.Registro input, .Registro select{
+    margin: auto;
+    margin-bottom: 10px;
 }
+
+
 
 .Registro h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.Registro h2,
+.Registro h3,
+.Registro h4,
+.Registro h5,
+.Registro h6 {
     text-align: center;
+    margin-top: 25px;
 }
 
 .datos-negocio-registro {

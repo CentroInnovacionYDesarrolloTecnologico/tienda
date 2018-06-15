@@ -41,6 +41,7 @@
                 fecha de nacimiento:
                 <input type="date" name="naci_due" value="" required="required">
             </div>
+            <hr>
             <div class="datos-negocio-registro">
                 <h4>Datos del negocio</h4>
                 <h5>Ingresa los datos principales de tu negocio de manera correcta</h5>
@@ -95,8 +96,8 @@
 
             </div>
             <div class="ultimos-datos">
-
-                <h4>Ultimos Datos</h4>
+            <hr>
+                <h4>Datos de acceso</h4>
                 <h5>Ingresa los datos de seguridad de tu cuenta</h5>
                 Correo electronico:
                 <input onkeyup="validar_contras()" type="text"
@@ -107,6 +108,8 @@
                 <input onkeyup="validar_contras() "type="password" id="contra1" name="pass_neg" required="required" value="">
                 Confirmar contraseña:
                 <input  onkeyup="validar_contras()" type="password"  id="contra2" name="passc_neg" value="" required="required">
+                <hr>
+                <h4>Ubicaci&oacute;n</h4>
                 <div id="map"></div>
                 <input id="posicionX" name="posicionX" type="hidden"/>
                 <input id="posicionY" name="posicionY" type="hidden"/>

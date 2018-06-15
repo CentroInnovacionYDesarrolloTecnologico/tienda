@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Ventas Patiyotl</title>
+    <title> Ventas </title>
     <link rel="stylesheet" href="CSS/estilo.css">
 
 
