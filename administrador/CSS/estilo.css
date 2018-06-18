@@ -5,44 +5,115 @@
     margin-top: 0;
     font-family: sans-serif;
 }
-body{
-    background: radial-gradient(1300px, #7bd1df,#000);
+
+body {
+    background: radial-gradient(1300px, #7bd1df, #000);
     margin: 0px;
     display: block;
 }
+
 .cont {
     height: auto;
     margin-left: 180px;
     min-width: 300px;
     margin-top: 2%;
 }
-#map{
+
+#map {
     width: 70%;
     margin: auto;
     height: 30vh;
 }
-.ex{
 
+input,
+textarea {
+    border: 1px solid black;
 }
+
+input,
+button,
+textarea {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input[type=file] {
+    border: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-a {
+    text-decoration: none;
+    background-color: #7bd1df;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    border-radius: 5px;
+    border: 1px solid #041a64;
+    color: black;
+    margin-left: auto;
+    margin-right: 35px;
+    width: 250px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-int {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ex {}
+
+/* ---------------------------------------------------- Index ---------------------------------------------------- */
+
+.img-index {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 35%;
+}
+
+.mens-bv {
+    margin-left: auto;
+    margin-right: 35px;
+    width: 250px;
+    text-align: center;
+    background-color: #7bd1df;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
 /*--------------------------------------------------- Barra lateral ---------------------------------------------------*/
 
 .barra-lateral {
-  z-index: 1000;
-  position: absolute;
-  left: 250px;
-    max-width:180px;
-  width: 154px;
-  min-width: 150px;
-  height: 100vh;
-  margin-left: -250px;
-  overflow-y: auto;
-  background:#7bd1df;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+    z-index: 1000;
+    position: absolute;
+    left: 250px;
+    max-width: 180px;
+    width: 154px;
+    min-width: 150px;
+    height: 100vh;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #7bd1df;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     margin-top: -2%;
-    position:fixed;
+    position: fixed;
 }
 
 .menus {
@@ -58,23 +129,29 @@ body{
 .menus li {
     text-indent: 15%;
     line-height: 40px;
-    width:140%;
+    width: 140%;
     margin-left: -40%;
+}
+
+.log-no li {
+    color: firebrick;
 }
 
 .menus a {
     font-size: 20px;
     text-decoration: none;
-    color:black;
+    color: black;
 }
+
 .menus li:hover {
     text-decoration: none;
-    background-color:#ccffff;
+    background-color: #ccffff;
 
 }
-.menus a:hover{
-    color:black;
-    text-shadow: 2px 2px #FFF;
+
+.menus a:hover {
+    color: black;
+    text-shadow: 2px 2px #ccc;
 }
 
 .logo img {
@@ -86,22 +163,16 @@ body{
 }
 
 .barra-superior {
-    background-color:#7bd1df;
+    background-color: #7bd1df;
     display: block;
     text-align: center;
 
 }
-.titulo img{
-    width:20%;
+
+.titulo img {
+    width: 20%;
     margin-top: -5%;
     margin-bottom: -5%;
-}
-
-/*-------------------------------------------------------- Galeria --------------------------------------------------------*/
-
-.galeria {
-    width: 60%;
-    display: inline-block;
 }
 
 .galeria td {
@@ -110,53 +181,66 @@ body{
     padding-bottom: 4%;
     border-color: black;
     border-style: solid;
+    margin: auto;
 
 }
+
+.log-no li:hover {
+    background-color: firebrick;
+}
+
+.log-no li:hover {
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+
 
 /*----------------------------------------------------- Cuenta negocio -----------------------------------------------------*/
 
 .cuenta {
-    width:80%;
-    margin-left:auto;
+    background-color: aliceblue;
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: aliceblue;
+    border: none;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.cuenta *{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.inicio_ses {
+    width: 30%;
+    margin-left: auto;
     margin-right: auto;
 }
 
-.Formulario-cuenta input {
-    display: block;
-    margin: 0 auto;
+.Formulario-negocio{
+    display: inline-block;
 }
 
-.Formulario-negocio input {
-    display: block;
-
-}
-
-.Formulario-negocio select {
-    display: block;
-}
-
-.Formulario-seguridad {
-    display: block;
-
-}
+/*---------------------------------------------------- Inicio sesion ----------------------------------------------------*/
 
 .logo-login img {
-    width: 80%;
-    height: 80%;
+    width: 70%;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo-login {
-    width: 30%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
-.inicio_ses{
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-}
-/*---------------------------------------------------- Inicio sesion ----------------------------------------------------*/
+
 
 .Formulario-logueo {
     font-size: 17px;
@@ -167,32 +251,23 @@ body{
     border: 2px #ccc solid;
     border-radius: 15px;
     padding: 15px;
-    background: radial-gradient(2000px, #7bd1df,#000);;
+    background: radial-gradient(300px, #7bd1df, #336699);
+    ;
 }
-.Formulario-logueo *{
+
+.Formulario-logueo * {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-.Formulario-logueo form h4, .Formulario-logueo form input {
+.Formulario-logueo form h4,
+.Formulario-logueo form input {
     margin-bottom: 15px;
 }
 
-.descripcion-login {
-    width:40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.descrip {
-    width: 90%;
-}
-
 .Formulario-logueo input {
-    width:50%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -201,15 +276,20 @@ body{
 /*-------------------------------------------------------- Registro --------------------------------------------------------*/
 
 .Registro {
-    display: block;
-    position: relative;
-    width: 30vw;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: aliceblue;
+    width: 60%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: aliceblue;
+    border: none;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 15px;
     text-align: center;
 }
 
-.Registro input, .Registro select{
+.Registro input,
+.Registro select {
     margin: auto;
     margin-bottom: 10px;
 }
@@ -237,9 +317,110 @@ body{
 .datos-negocio-registro {
     display: block;
 }
-.catalogo_neg, .Ventas, .items-hp, .formu_cuenta, .galeria{
+
+.Ventas,
+.items-hp,
+.formu_cuenta {
     background-color: aliceblue;
 }
-.formu_cuenta{
+
+.formu_cuenta {
     padding: 28px;
+}
+
+
+
+/* ----------------------------------------------- Catalogo negocio ----------------------------------------------- */
+
+.catalogo_neg {
+    width: 90%;
+    margin: auto;
+    margin-top: 35px;
+    background-color: none;
+    border: none;
+}
+
+.catalogo_neg tr th {
+    border-style: none;
+}
+
+.catalogo_neg tr td {
+    border-radius: 18px;
+    background-color: aliceblue;
+    border-style: none;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.catalogo_neg tr td * {
+    margin: auto;
+    text-align: center;
+}
+
+.catal {
+    display: relative;
+}
+
+/* ------------------------------------------------ Agregar producto ------------------------------------------------ */
+
+.add-producto {
+    width: 90%;
+    margin: auto;
+    margin-top: 35px;
+    background-color: aliceblue;
+    border: none;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.add-producto * {
+    display: block;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+/*--------------------------------------------------- Ver producto--------------------------------------------------- */
+
+.producto-visto {
+    background-color: aliceblue;
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: aliceblue;
+    border: none;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.producto-visto * {
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------- Ventas ----------------------------------------------------- */
+
+.contenido-ventas {
+    background-color: aliceblue;
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: aliceblue;
+    border: none;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.contenido-ventas th,
+td {
+    text-align: center;
+}
+
+.contenido-ventas table {
+    margin: auto;
 }

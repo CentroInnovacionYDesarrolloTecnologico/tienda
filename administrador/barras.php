@@ -15,7 +15,7 @@ echo'
                 <a href="Ventas.php"><li>Ventas</li></a>
                 <a style="display: none;" href="Calificaciones.php"><li>Calificaciones</li></a>
                 <a href="Cuenta.php"><li>Mi cuenta</li></a>
-                <a href="Logout.php"><li>Cerrar sesion</li></a>
+                <a href="Logout.php" class="log-no"><li>Cerrar sesion</li></a>
             </ul>
         </div>
     </div>

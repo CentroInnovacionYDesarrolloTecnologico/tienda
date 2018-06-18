@@ -9,24 +9,8 @@
         ?>
     <div>
         <section>
-            <table class="galeria">
-                <tr>
-                    <td>
-                        <a href="Catalogo.php"><img src="img/catalogo.png" width="50%" alt="catalogo de productos" title="Catalogo" ></a>
-                    </td>
-                    <td>
-                        <a href="Ventas.php"><img src="img/ventas.jpg" width="50%"  alt="Ventas" title="Ventas"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="Calificaciones.php"><img src="img/calificaciones-2.jpg" width="50%" alt="Calificaciones" title="Calificaciones"> </a>
-                    </td>
-                    <td>
-                        <a href="Cuenta.php"><img src="img/Tienda.jpg" width="50%" alt="Mi cuenta" title="Mi cuenta"> </a>
-                    </td>
-                </tr>
-            </table>
+            <h3 class="mens-bv">Bienvenido, <?php $sqlBusca="select nombrern from negocios where idnegocio=".$_SESSION['adminLog']; $resBusca=mysqli_query($mysqli,$sqlBusca); if($fila=mysqli_fetch_array($resBusca)){ echo $fila[0]; } ?></h3>
+            <img class="img-index" src="img/2.png" alt="logo">
         </section>
     </div>
   </body>

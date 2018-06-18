@@ -13,8 +13,8 @@
         include("Barras.php");
         $id=$_GET['id'];
       ?>
-      <div class="producto-visto">
-        <a class="btn-atras-catalogo" title="Volver" href="javascript:window.history.go(-1);">Volver</a>
+      <a class="btn-a" title="Volver" href="javascript:window.history.go(-1);">Volver</a>
+        <div class="producto-visto">
           <?php
            $sqlVerP="SELECT NombreP FROM productos WHERE idproducto=".$id.";";
            $res=mysqli_query($mysqli,$sqlVerP);
@@ -33,17 +33,17 @@
                     }
                 ?>
             <p>
-            <label for="txt_CB">Codigo de barras</label>
+                <label for="txt_CB">Codigo de barras: <b style="display: inline-block;"><?php echo $CB; ?></b></label>
             </p>
-            <?php echo $CB; ?>
         </div>
         <div class="v-prod">
-            <img src="img/produc.jpg" width="35%" height="300px" alt="Producto">
+            <img src="img/produc.jpg" height="300px" alt="Producto">
           </div>
-          <div class="decripcion">
+        <div style="width: 100%; margin: auto;">
+        <div style="display: inline-block;" class="decripcion">
 
               <form method="post" action="modificardesp.php?id=<?php echo $id; ?>">
-              Descripcion:
+                  <label >Descripci&oacute;n:</label>
                     <?php
                         $sqlVerP="SELECT Descripcion FROM productos WHERE idproducto=".$id.";";
                         $res=mysqli_query($mysqli,$sqlVerP);
@@ -51,13 +51,13 @@
                             $desc=$fila[0];
                         }
                     ?>
-              <textarea name="Descripcion" rows="7" cols="55"><?php echo $desc; ?></textarea>
-              <input class="mult_submit" type="submit" name="submit_mult" value="Modificar Descripción" title="Modificar"  >
+              <textarea style="display: inline-block;" name="Descripcion"><?php echo $desc; ?></textarea>
+              <input type="submit" name="submit_mult" value="Modificar Descripción" title="Modificar">
               </form>
 
           </div>
-
-          <div class="btn_addpr">
+            <div style="width: 10%; display: inline-block;"></div>
+          <div style="display: inline-block;"  class="btn_addpr">
 
               <form method="post" action="modificarpre.php?id=<?php echo $id; ?>">
              <label for="txt_cantidad">Precio Unitario:</label>
@@ -72,10 +72,11 @@
 
             <input type="text" name="Preciounitario" value="<?php echo $preuni; ?>" />
 
-            <input class="mult_submit" type="submit" name="submit_mult" value="Modificar Precio" title="Modificar cantidad"  >
+            <input type="submit" name="submit_mult" value="Modificar Precio" title="Modificar cantidad"  >
 
             </form>
           </div>
+            </div>
       </div>
   </body>
 </html>

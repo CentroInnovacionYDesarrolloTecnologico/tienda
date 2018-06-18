@@ -49,7 +49,7 @@
 								'.$fila[0].'
 							</div>
 							<div class="producto_imagen">
-								<img src="img/img.jpg" width="50%">
+								<img src="img/producto.jpg" width="50%">
 							</div>
 							<div class="producto_desc">
 								<p>

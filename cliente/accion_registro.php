@@ -18,7 +18,7 @@
 	}
 	else{
         try{
-            $sql="INSERT INTO `usuarios` (Usuario,PasswordU,Nombres,ApaternoU,AmaternoU,Fnac,Sexo,TcelularU,TcasaU,CorreoU,CP,Rangoyu,Rangoxu) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."','".$CP."','".$PY."','".$PX."');";
+            $sql="INSERT INTO `usuarios` (Usuario,PasswordU,Nombres,ApaternoU,AmaternoU,Fnac,Sexo,TcelularU,TcasaU,CorreoU,idcolonia,Rangoyu,Rangoxu) VALUES ('".$us."','".$pass."','".$nombre."','".$app."','".$apm."','".$fecha."','".$sexo."','".$celu."','".$fijo."','".$correo."','".$CP."','".$PY."','".$PX."');";
             echo $sql;
             $res=mysqli_query($mysqli,$sql);
             if(!$res){

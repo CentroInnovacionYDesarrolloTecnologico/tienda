@@ -16,9 +16,7 @@ if(isset($_SESSION['adminLog'])==0){
             <div class="logo-login">
                     <img src="img/2.png" alt="Logo">
             </div>
-            <div class="descripcion-login">
-                <p>Patiyotl es una plataforma de comercio electr&oacute;nico cuyo objetivo es acercar a los pequeños negocios con los usuarios cotidianos, abriendo las puertas de la difusi&oacute;n tecnol&oacute;gica a aquellos comerciantes que se han visto afectados por esta brecha</p>
-            </div>
+
         <div class="Formulario-logueo">
             <form action="accion-login.php" method="post">
             <h4>Ingresar correo:</h4>
@@ -27,7 +25,7 @@ if(isset($_SESSION['adminLog'])==0){
             <input type="password" name="cont" value="">
             <input type="submit" name="ingresar" value="Ingresar"/>
             </form>
-            <a href="Recupera.php">Olvide mi contraseña</a>
+            <a style="display: none;" href="Recupera.php">Olvide mi contraseña</a>
             <a href="Registro.php">Registrarme</a>
         </div>
     </div>
