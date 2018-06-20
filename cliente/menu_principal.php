@@ -24,12 +24,12 @@
 							<span>
 								<img src="tiendita.png">
 							</span>
-							<p>
+							<p class="direc">
                                 '.$fila[3].', '.$fila[4].', '.$fila[5].'
                                 <br>
                                 '.$fila[6].'
                             </p>
-							<h4>
+							<h4 class="giro">
 								'.$fila[1].'
 							</h4>
 						</div>

@@ -17,15 +17,18 @@
     $fecha=getdate();
     $folioCod=$_GET['neg'].substr($fecha['year'],-2).str_pad($fecha['mon'],2,0,STR_PAD_LEFT).$fecha['mday'].$num;
     echo $folioCod;
-    $sqlInsVenta="insert into ventas (folio,total,statusv,idNegocioFp) values ('".$folioCod."',".$Total.",1,'2');";
+    $sqlInsVenta="insert into ventas (folio,total,statusv,idNegocioFp) values ('".$folioCod."',".$Total.",1,'3');";
+    echo $sqlInsVenta."<br>";
     $resInsVenta=mysqli_query($mysqli,$sqlInsVenta);
     if(!$resInsVenta){
         echo "Oh no... :c";
     }else{
         $sqlConta="update negocios set cantidadventas=cantidadventas+1 where idnegocio=".$_GET['neg'].";";
+        echo $sqlConta;
         $resConta=mysqli_query($mysqli,$sqlConta);
         for($it=0;$it<$cant;$it++){
             $sqlUpdCarrito="update detalleventa set status=0 where iddetalleventa=".$_GET['dett'.$it].";";
+            echo $sqlUpdCarrito;
             $resUpdCarrito=mysqli_query($mysqli,$sqlUpdCarrito);
             if($resUpdCarrito){
                 $sqlidVenta="select idventa from ventas where folio='".$folioCod."';";
@@ -35,6 +38,7 @@
                     $idVenta=$fila10[0];
                 }
                 $sqlInsRDV="insert into RDV (idventa,iddetalleventa) values (".$idVenta.",".$_GET['dett'.$it].");";
+                echo $sqlInsRDV;
                 $resInsRDV=mysqli_query($mysqli,$sqlInsRDV);
             }
         }

@@ -20,7 +20,7 @@
 		echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	else{
-		$sql="INSERT INTO `patiyotl`.`negocios` (CorreoRN,NombreRN,ApaternoRN,AmaternoRN,TcasaN,Razon,TcelN,PasswordN,Calle,NNegocio,Estado,Municipio,idColonia,FnacRN,Rangoxn,Rangoyn) VALUES ('".$corr_negg."','".$nombre_dd."','".$ap_duen."','".$am_duen."','".$tell_negg."','".$gir_neg."','".$telm_negg."','".$pass."','".$call_negg."','".$nom_ne."','".$est_nneg."','".$munn_neg."','".$Duo."','".$nacc_duen."','".$PX."','".$PY."');";
+		$sql="INSERT INTO `patiyotl`.`negocios` (CorreoRN,NombreRN,ApaternoRN,AmaternoRN,TcasaN,Razon,TcelN,PasswordN,Calle,NNegocio,Estado,Municipio,idColonia,FnacRN,Rangoxn,Rangoyn,StatusN) VALUES ('".$corr_negg."','".$nombre_dd."','".$ap_duen."','".$am_duen."','".$tell_negg."','".$gir_neg."','".$telm_negg."','".$pass."','".$call_negg."','".$nom_ne."','".$est_nneg."','".$munn_neg."','".$Duo."','".$nacc_duen."','".$PX."','".$PY."',1);";
 		$res=mysqli_query($mysqli,$sql);
         if(!$res){
             echo 'El producto no puede ser agregado';

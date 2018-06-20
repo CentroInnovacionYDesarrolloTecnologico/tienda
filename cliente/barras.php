@@ -25,7 +25,7 @@ $cantidad_productos=0;
                          <div class="desplegable">
                             <a class="boton_superior">
                                 <h2>
-                                    Cuenta
+                                    Cuenta <span style="font-size: 15px;">&nabla;</span>
                                 </h2>
 
                             </a>

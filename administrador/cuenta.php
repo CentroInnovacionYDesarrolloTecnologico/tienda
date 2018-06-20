@@ -213,6 +213,17 @@
                     <input type="text" name="telm_negc" value="<?php echo $TcasaN;?>" id="fijo" onkeypress="valida(event)">
                 </div>
                 <div class="Formulario-cuenta">
+                    <h4>DATOS PERSONALES</h4>
+                    <label>Nombre (s):</label>
+                    <input type="text" name="htNombreA" value="<?php echo $NombreRN;?> " size="25" required="required" onkeypress="validados(event)">
+                    <label>Apellido paterno:</label>
+                    <input type="text" name="htApellidopB" value="<?php echo $ApaternoRN;?>" onkeypress="validados(event)" size="25" required="required">
+                    <label>Apellido materno:</label>
+                    <input type="text" name="htApellidomC" value="<?php echo $AmaternoRN;?>" onkeypress="validados(event)" size="25" required="required">
+                    <label>Fecha de nacimiento:</label>
+                    <input type="date" name="fnac" value="<?php echo $FnacRN;?>" required="required">
+                </div>
+                <div class="Formulario-cuenta">
                     <h4>Datos de Acceso</h4>
                     <label>Contrase&ntilde;a nueva:</label>
                     <input type="password" name="" value="" id="pass1">
@@ -225,18 +236,6 @@
                             </p>
                         </strong>
                     </span>
-
-                </div>
-                <div class="Formulario-cuenta">
-                    <h4>DATOS PERSONALES</h4>
-                    <label>Nombre (s):</label>
-                    <input type="text" name="htNombreA" value="<?php echo $NombreRN;?> " size="25" required="required" onkeypress="validados(event)">
-                    <label>Apellido paterno:</label>
-                    <input type="text" name="htApellidopB" value="<?php echo $ApaternoRN;?>" onkeypress="validados(event)" size="25" required="required">
-                    <label>Apellido materno:</label>
-                    <input type="text" name="htApellidomC" value="<?php echo $AmaternoRN;?>" onkeypress="validados(event)" size="25" required="required">
-                    <label>Fecha de nacimiento:</label>
-                    <input type="date" name="fnac" value="<?php echo $FnacRN;?>" required="required">
                 </div>
                 <div class="Formulario-seguridad">
                     <h4>Validaci&oacute;n</h4>

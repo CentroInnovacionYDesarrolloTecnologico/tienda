@@ -32,20 +32,11 @@
         <a href="login.php" class="btn-a">Volver a inicio de sesi&oacute;n</a>
         <div class="Registro">
             <form method="POST" action="accion-regisrep.php">
-                <h1>Registro de negocio</h1>
+                <h1>Registro de Negocio</h1>
                 Ingresa los datos que se te piden de manera correcta para poder realizar tu registro
                 <div class="datos-personales-registro">
-                    <h4>DATOS PERSONALES</h4>
-                    <h5>Ingresa tus datos personales de manera correcta</h5>
-                    Nombre (s):
-                    <input type="text" name="nom_due" value="" size="25" required="required" onkeypress="return validados(event)"> Apellido paterno:
-                    <input type="text" name="ap_due" value="" size="25" required="required" onkeypress="return validados(event)"> Apellido materno:
-                    <input type="text" name="am_due" value="" size="25" required="required" onkeypress="return validados(event)"> Fecha de nacimiento:
-                    <input type="date" name="naci_due" value="" required="required">
-                </div>
-                <hr>
-                <div class="datos-negocio-registro">
-                    <h4>Datos del negocio</h4>
+                    <div class="datos-negocio-registro">
+                    <h4>Datos del Negocio</h4>
                     <h5>Ingresa los datos principales de tu negocio de manera correcta</h5>
                     Nombre del negocio:
                     <input type="text" name="nom_neg" value="" required="required"> Giro:
@@ -70,13 +61,13 @@
                     <option selected>Cuautitlán</option>
                 </select> Colonia:
                     <?php
-        $query2="SELECT * from colonias;";
+        $query2="SELECT Idcolonia, Nombreco from colonias;";
         $resul2= mysqli_query($mysqli,$query2);
                 echo'<select name="Duo" required="required">
                 <option>Selecciona tu colonia</option>';
         while($row=mysqli_fetch_array($resul2)){
-            $NomCol=$row['Nombreco'];
-            $idColonia=$row['idColonia'];
+            $NomCol=$row['1'];
+            $idColonia=$row['0'];
                 echo '<option value="'.$idColonia.'">'.$NomCol.'</option>';
         }
                 echo'</select>';
@@ -87,10 +78,19 @@
                         <input type="text" name="tell_neg" required="required" value="" id="fijo" onkeypress="return valida(event)">
 
                 </div>
+                   <hr>
+                    <h4>Datos Personales</h4>
+                    <h5>Ingresa tus datos personales de manera correcta</h5>
+                    Nombre (s):
+                    <input type="text" name="nom_due" value="" size="25" required="required" onkeypress="return validados(event)"> Apellido paterno:
+                    <input type="text" name="ap_due" value="" size="25" required="required" onkeypress="return validados(event)"> Apellido materno:
+                    <input type="text" name="am_due" value="" size="25" required="required" onkeypress="return validados(event)"> Fecha de nacimiento:
+                    <input type="date" name="naci_due" value="" required="required">
+                </div>
+                <hr>
                 <div class="ultimos-datos">
-                    <hr>
-                    <h4>Datos de acceso</h4>
-                    <h5>Ingresa los datos de seguridad de tu cuenta</h5>
+                    <h4>Datos de Acceso</h4>
+                    <h5>Ingresa los datos de seguridad para tu cuenta</h5>
                     Correo electronico:
                     <input onkeyup="validar_contras()" type="text" name="corr_neg" id="corr_neg" value="" required="required"> Confirma tu correo electronico
                     <input onkeyup="validar_contras()" type="text" id="corr_conf" value="" required="required"> Contraseña:

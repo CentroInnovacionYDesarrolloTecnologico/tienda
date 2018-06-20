@@ -36,7 +36,7 @@
         $CorreoU=$row['CorreoU'];
         $ApaternoU=$row['ApaternoU'];
         $AmaternoU=$row['AmaternoU'];
-        $FnacU=$row['FnacU'];
+        $FnacU=$row['Fnac'];
         $TcelU=$row['TcelularU'];
         $TcasaU=$row['TcasaU'];
         $Estado=$row['Estado'];

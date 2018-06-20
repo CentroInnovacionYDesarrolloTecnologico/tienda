@@ -24,11 +24,10 @@
             }
         ?>
         <div class="contenido">
-            <table class="catalogo_neg" cellspacing="8">
-        <?php
-			echo $txt_mens;
-		?>
-		
+            <table class="catalogo_neg">
+                <?php
+                    echo $txt_mens;
+                ?>
                 <tr>
                     <th colspan="6">
                         <?php
