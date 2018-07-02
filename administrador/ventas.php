@@ -13,7 +13,8 @@
     <?php
       include("Barras.php");
         ?>
-        <div class="contenido-ventas">
+        <section>
+            <div class="contenido-ventas">
 
             <table class="tabla_pedido">
                 <tr>
@@ -57,5 +58,6 @@
             </table>
 
         </div>
+        </section>
 </body>
 </html>

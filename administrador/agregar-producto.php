@@ -22,7 +22,7 @@
             <p>Para agregar un nuevo producto llena los siguientes campos   con los datos correspondientes del producto</p>
         </div>
         <div class="datos-del-producto">
-            <form method="post" action="accion-agregar.php">
+            <form method="post" action="accion-agregar.php" enctype="multipart/form-data">
                 <label>Nombre del producto:</label>
                 <input type="text" name="nombre" value="" required="required">
                 <label>Codigo de barras:</label>
@@ -30,7 +30,7 @@
                 <label>Descripci&oacute;n:</label>
                 <textarea name="descrip" class="descripcion" rows="4" cols="22" required="required"></textarea>   <label>Precio:</label>
                 <input type="text" name="precio" value="">
-                <label style="display: inline-block;" for="ag_img">Imagen:</label><input style="display: inline-block;" type="file" name="imagen" id="img">
+                <label style="display: inline-block;" for="ag_img">Imagen:</label><input style="display: inline-block;" type="file" name="imagen" id="imagen">
                 <input style="width: 150px;" class="btn-int" type="submit" value="Agregar Producto">
             </form>
         </div>

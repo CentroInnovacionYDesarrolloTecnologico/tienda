@@ -12,10 +12,10 @@ if(isset($_SESSION['adminLog'])==0){
     </head>
 
     <body>
-        <div class="descrip">
-            <div class="logo-login">
-                    <img src="img/2.png" alt="Logo">
-            </div>
+    <div class="cont-login">
+        <div class="logo-login">
+                <img src="img/2.png" alt="Logo">
+        </div>
 
         <div class="Formulario-logueo">
             <form action="accion-login.php" method="post">

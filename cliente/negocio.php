@@ -37,7 +37,7 @@
                 </tr>
 				<tr>
                 <?php
-					$sql_prod="select NombreP, preciounitario, idproducto,descripcion from productos where idNegocio=".$cv.' && disponibilidad=1 order by preciounitario;';
+					$sql_prod="select NombreP, preciounitario, idproducto,descripcion,Imagen from productos where idNegocio=".$cv.' && disponibilidad=1 order by preciounitario;';
 					$res1=mysqli_query($mysqli,$sql_prod);
 					$o=0;
 					while($fila = mysqli_fetch_array($res1)){
@@ -48,7 +48,7 @@
 								'.$fila[0].'
 							</div>
 							<div class="producto_imagen">
-								<img src="img/producto.jpg" width="50%">
+								<img src="../administrador/'.$fila[4].'" width="50%">
 							</div>
 							<div class="producto_desc">
 								<p>
@@ -68,7 +68,7 @@
 								</div>
 							</div>
 						</td>';
-						if($o==6){
+						if($o%4==0){
 							echo '</tr><tr>';
 						}
 					}

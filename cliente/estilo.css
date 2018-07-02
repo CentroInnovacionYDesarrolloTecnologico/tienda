@@ -2,7 +2,6 @@
     font-family: sans-serif;
 }
 body{
-    background: radial-gradient(1300px, #7bd1df,#000);
     margin: 0px;
 }
 a{
@@ -13,19 +12,20 @@ a{
     width: 70%;
     margin:auto;
     height: 30vh;
+    margin-bottom: 25px;
 }
 .modal_login{
 	margin-left: 25%;
 	margin-right: auto;
 	position: absolute;
 	width: 45%;
-	background-color: b7c7c7;
+	background-color: #b43030;
 	padding: 2%;
 	height: 50%;
 	box-shadow: 10px 7px grey;
 }
 .modal_login a{
-	color: red;
+	color: dodgerblue;
 }
 .modal_login input{
 	margin-left: auto;
@@ -38,13 +38,13 @@ a{
 	margin-right: auto;
 	position: absolute;
 	width: 45%;
-	background-color: b7c7c7;
+	background-color: #b43030;
 	padding: 2%;
-	height: 75	%;
+	height: 210%;
 	box-shadow: 10px 7px grey;
 }
 .modal_registro a{
-	color: red;
+	color: dodgerblue;
 }
 .modal_registro input{
 	margin-left: auto;
@@ -54,7 +54,7 @@ a{
 }
 .ex{
 	width: 100%;
-	height: 20%;
+	height: 50px;
 	background-color: #18a7a7;
 }
 .contenedor_index{
@@ -63,7 +63,6 @@ a{
 }
 .cuadro_ini{
     border: 1px solid black;
-    
 }
 .logo_index{
     margin-left: auto;
@@ -100,11 +99,17 @@ a{
     width: 100%;
     position: absolute;
     margin: 0px;
+    background-color: #1f1f1f;
+    box-sizing:border-box;
+    margin-bottom: 20px;
 }
 .logo{
     display: inline-block;
     width: 20%;
     text-align: center;
+}
+.logo img{
+    filter: invert(100%);
 }
 .nombre{
     width: 60%;
@@ -113,7 +118,7 @@ a{
     
 }
 .menu{
-    text-align: center;
+    text-align: right;
     display: inline-block;
 }
 .menu * *{
@@ -146,20 +151,19 @@ a{
     text-align: center;
     position: fixed;
     width: 15%;
-    background-color: #7bf6e6;
-    border: 2px solid #1e90ff;
+    background-color: firebrick;
+    border: 2px solid #fff9c4;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    
-
 }
 .contenido_desplegable a{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    background-color: #7bf6e6;
-    border-bottom: 1px #1e90ff solid;
+    background-color: firebrick;
+    border-bottom: 1px #fff9c4 solid;
     text-align: left;
     display: block;
+    color: white;
 }
 .desplegable:hover .contenido_desplegable{
     display: block;
@@ -167,7 +171,8 @@ a{
     margin-top: -40px;
 }
 .contenido_desplegable a:hover{
-    background-color: aliceblue;
+    background-color: #fff9c4;
+    color: black;
 }
 .contenido{
     padding-top: 9%;
@@ -178,7 +183,7 @@ a{
     margin-left: 6%;
     float: left;
     margin-bottom: 5%;
-    background-color: antiquewhite;
+    background-color: #fff9c4;
     border-radius: 15px;
 }
 .negocio *{
@@ -188,31 +193,37 @@ a{
     font-size: 120px;
 }
 .negocio h3{
-    background-color: #bdd0e0;
+    background-color: #ea3b3b;
     margin-top: 0%;
     padding-top: 3%;
     padding-bottom: 3%;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    color: white;
 }
 .negocio p{
-    background-color: #bdd0e0;
+    background-color: #fff176;
     margin-bottom: 0%;
     padding-top: 3%;
     padding-bottom: 3%;
 }
 .negocio h4{
-    background-color: #ea3b3b;
+    background-color: #e53935;
     margin-top: 0%;
     padding-top: 3%;
     padding-bottom: 3%;
     margin-bottom: 0%;
+    color: white;
+}
+.negocio img{
+    width: 50%;
 }
 .catalogo_neg{
     width: 80%;
     padding-left: 5%;
     padding-right: 5%;
     margin: auto;
+    border-spacing: 15px;
 }
 .catalogo_neg th{
     background-color: none;
@@ -226,24 +237,23 @@ a{
     color: black;
     text-align: center;
     padding-bottom: 10px;
-    padding-top: 10px;
-    width: auto;
+    padding-top: 0px;
+    width: 120vw;
     margin: auto;
-    border: 1px solid black;
+    border: 3px solid #e53935;
     border-radius: 15px;
-    background:  radial-gradient(300px, #7bd1df, #336699);
+    background: #fff9c4;
 }
 .producto_titulo{
-    color: #fff;
+    color: #000;
     font-weight: 600;
     margin-bottom: 15px;
-    background-color: firebrick;
 }
 .producto_imagen img{
     height: 90px;
 }
 .producto_desc{
-    
+    background-color: none;
 }
 .descripcion{
     float:right;
@@ -263,14 +273,38 @@ a{
    
 }
 .titulo_carrito{
-    color:white;
+    color:black;
     
 }
 .carrito{
-    background-color: white;
+    background-color: #e53935;
     text-align: center;
     width:80%;
-    
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    color: white;
+    border-radius: 12px;
+}
+.carrito *{
+    border-bottom: 1px solid black;
+    border-radius: 12px;
+}
+.carrito td{
+    width: 15%;
+}
+.carrito a,.carrito input,.carrito button{
+    border-radius: 0px;
+}
+.carrito td:first-child{
+    width: 28%;
+}
+.carrito img{
+    width: 150px;
+    height: 100px;
+}
+.carrito td:last-child{
+    font-weight: 600;
 }
 .Terminar_compra{
     background-color: white;

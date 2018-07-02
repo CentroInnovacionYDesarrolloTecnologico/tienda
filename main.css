@@ -1,6 +1,9 @@
 *{
 	font-family: sans-serif;
 }
+body{
+    background: radial-gradient(1300px, #7bd1df,#000);
+}
 a{
 	color: white;
 	text-decoration: none;

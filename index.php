@@ -11,7 +11,7 @@
 		</h1>
 		<a href="administrador/login.php">
 			<div class="admin_opc">
-				<img src="img/693.jpg">
+				<img src="img/701.jpg">
 				<h2>
 					Administrar negocio
 				</h2>
@@ -19,7 +19,7 @@
 		</a>
 		<a href="cliente/menu_principal.php">
 			<div class="user_opc">
-				<img src="img/692.jpg">
+				<img src="img/700.jpg">
 				<h2>
 					Comprar
 				</h2>

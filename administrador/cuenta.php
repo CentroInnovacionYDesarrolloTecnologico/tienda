@@ -165,7 +165,7 @@
             $NomCol=$row['Nombreco'];
         }
     ?>
-
+<section>
         <div class="cuenta">
             <form method="POST" action="modificar.php" class="formu_cuenta">
                 <h1>Mi cuenta</h1>
@@ -357,6 +357,7 @@
             }
 
         </script>
+</section>
 </body>
 
 </html>

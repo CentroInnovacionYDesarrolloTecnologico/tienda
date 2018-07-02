@@ -29,6 +29,7 @@
             </div>
         </div>
         <br>
+        <section>
         <a href="login.php" class="btn-a">Volver a inicio de sesi&oacute;n</a>
         <div class="Registro">
             <form method="POST" action="accion-regisrep.php">
@@ -252,6 +253,7 @@ AIzaSyDfSF9yM5sBO3PdlJ3yxWwh0lFHGReENcQ
                 return patron.test(tecla_final);
             }
         </script>
+</section>
 </body>
 
 </html>

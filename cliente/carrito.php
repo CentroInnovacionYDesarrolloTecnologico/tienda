@@ -17,12 +17,12 @@
                     Carrito de compras 
                 </h1>
                 <?php
-                    $sqlNegoCarrito="select negocios.idnegocio, negocios.NNegocio from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.status=1 group by negocios.idnegocio";
+                    $sqlNegoCarrito="select negocios.idnegocio, negocios.NNegocio from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.status=1 group by negocios.idnegocio order by iddetalleventa desc";
                     $resNegoCarrito=mysqli_query($mysqli,$sqlNegoCarrito);
                     while($fila12=mysqli_fetch_array($resNegoCarrito)){
                         echo ' <table class="carrito" cellpadding="3">';
                         echo '<tr><th colspan="6">'.$fila12[1].'</th></tr>';
-                        $sqlCarrito="select detalleventa.Direccion,detalleventa.Subtotaldeproductos,sum(detalleventa.Cantidad), productos.NombreP,productos.Preciounitario, negocios.NNegocio, productos.Preciounitario, detalleventa.idDetalleVenta,detalleventa.idproducto,detalleventa.idusuario from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.idusuario=".$_SESSION['usrcnf']." && negocios.idnegocio=".$fila12[0]." && detalleventa.status=1 group by detalleventa.idproducto;";
+                        $sqlCarrito="select detalleventa.Direccion,detalleventa.Subtotaldeproductos,sum(detalleventa.Cantidad), productos.NombreP,productos.Preciounitario, negocios.NNegocio, productos.Preciounitario, detalleventa.idDetalleVenta,detalleventa.idproducto,detalleventa.idusuario, productos.Imagen from detalleventa inner join productos on detalleventa.idproducto=productos.idproducto inner join negocios on productos.idnegocio=negocios.idnegocio where detalleventa.idusuario=".$_SESSION['usrcnf']." && negocios.idnegocio=".$fila12[0]." && detalleventa.status=1 group by detalleventa.idproducto;";
                         $resCarrito=mysqli_query($mysqli,$sqlCarrito);
                         $totalSUM=0;
                         $conta=0;
@@ -30,7 +30,7 @@
                         while($fila=mysqli_fetch_array($resCarrito)){
                             echo '<tr>
                                     <td>
-                                        <img src="img/producto.jpg" width="20%">
+                                        <img src="../administrador/'.$fila[10].'" width="20%">
                                     </td>
                                     <td>
                                         '.$fila[3].'
